@@ -11,8 +11,14 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
+var stop_moving := false
+
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
+	
+	if event.is_action_pressed("ui_accept"):
+		stop_moving = !stop_moving
+	
+	if not stop_moving and event is InputEventMouseMotion:
 		yaw -= event.relative.x * mouse_sensitivity
 		pitch -= event.relative.y * mouse_sensitivity
 		

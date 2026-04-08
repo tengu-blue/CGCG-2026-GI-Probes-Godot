@@ -5,15 +5,26 @@ extends Node3D
 
 @export var material: Node3D
 
+var cubemap
+
 func _ready():
 	var map = await capture_cubemap(global_transform.origin)
+	
+	cubemap = map
 	
 	var mat = material.get_active_material(0)
 	mat.set_shader_parameter("source_panorama", map)
 
+"""
+func _unhandled_input(event: InputEvent) -> void:
+	
+	if event.is_action_pressed("ui_accept"):
+		ResourceSaver.save(cubemap, "res://cubemap.res", ResourceSaver.FLAG_COMPRESS)
+"""
 
-func capture_cubemap(pos: Vector3) -> ImageTextureLayered:
-	global_transform.origin = pos
+
+func capture_cubemap(pos: Vector3) -> Cubemap:
+	# global_transform.origin = pos
 
 	var directions = [
 		{ "dir": Vector3.LEFT,	"up": Vector3.DOWN }, # -X
@@ -25,9 +36,12 @@ func capture_cubemap(pos: Vector3) -> ImageTextureLayered:
 	]
 
 	var images: Array[Image] = []
-
+	
+	var cam_pos = cam.position
+	
 	for d in directions:
 		cam.transform = Transform3D().looking_at(d.dir, d.up)
+		cam.position = cam_pos
 
 		viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 		await RenderingServer.frame_post_draw  # wait for render

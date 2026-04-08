@@ -8,7 +8,11 @@ void vertex() {
 }
 
 void fragment() {
-	vec3 eyedir = normalize(-(INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
+	
+	vec3 refl = reflect(VIEW, NORMAL);
+	refl = normalize((INV_VIEW_MATRIX * vec4(refl, 0.0)).xyz);
+	
+	vec3 eyedir = refl;
     ALBEDO = texture(source_panorama, eyedir).rgb * exposure;
 }
 
