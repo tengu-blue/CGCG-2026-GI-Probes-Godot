@@ -16,12 +16,12 @@ func capture_cubemap(pos: Vector3) -> ImageTextureLayered:
 	global_transform.origin = pos
 
 	var directions = [
-		{ "dir": Vector3.RIGHT,  "up": Vector3.DOWN }, # +X
-		{ "dir": Vector3.LEFT,   "up": Vector3.DOWN }, # -X
-		{ "dir": Vector3.UP,     "up": Vector3.FORWARD }, # +Y
-		{ "dir": Vector3.DOWN,   "up": Vector3.BACK }, # -Y
-		{ "dir": Vector3.FORWARD,"up": Vector3.DOWN }, # +Z
-		{ "dir": Vector3.BACK,   "up": Vector3.DOWN }, # -Z
+		{ "dir": Vector3.LEFT,	"up": Vector3.DOWN }, # -X
+		{ "dir": Vector3.RIGHT,	"up": Vector3.DOWN }, # +X
+		{ "dir": Vector3.DOWN,	"up": Vector3.BACK }, # +Y
+		{ "dir": Vector3.UP,	     "up": Vector3.FORWARD }, # -Y
+		{ "dir": Vector3.FORWARD, "up": Vector3.DOWN }, # -Z
+		{ "dir": Vector3.BACK,	"up": Vector3.DOWN }, # +Z
 	]
 
 	var images: Array[Image] = []
@@ -33,7 +33,7 @@ func capture_cubemap(pos: Vector3) -> ImageTextureLayered:
 		await RenderingServer.frame_post_draw  # wait for render
 
 		var img = viewport.get_texture().get_image()
-		images.append(img)
+		images.push_back(img)
 
 	var cubemap = Cubemap.new()
 	cubemap.create_from_images(images)

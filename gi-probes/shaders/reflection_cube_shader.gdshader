@@ -4,11 +4,11 @@ uniform samplerCube source_panorama : filter_linear, source_color, hint_default_
 uniform float exposure = 1.0;
 
 void vertex() {
-	// Called for every vertex the material is visible on.
+	
 }
 
 void fragment() {
-	vec3 eyedir = NORMAL;
+	vec3 eyedir = normalize(-(INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
     ALBEDO = texture(source_panorama, eyedir).rgb * exposure;
 }
 

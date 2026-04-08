@@ -31,6 +31,7 @@ render_target_update_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=643844602]
 environment = ExtResource("2_8pqae")
+fov = 90.0
 near = 1.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=373210264]
