@@ -5,6 +5,7 @@
 [ext_resource type="Environment" uid="uid://d4eom8iwy80lv" path="res://env/sky_env.tres" id="2_8pqae"]
 [ext_resource type="Script" uid="uid://iam1ucpyv6nk" path="res://scripts/controller.gd" id="4_2kukh"]
 [ext_resource type="Cubemap" uid="uid://dedismpwlm1la" path="res://cubemap.res" id="4_47tsv"]
+[ext_resource type="Shader" uid="uid://bsrfvrnp7mek1" path="res://shaders/cubemap_to_rect.gdshader" id="6_dc0lp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8pqae"]
 render_priority = 0
@@ -16,21 +17,29 @@ shader_parameter/exposure = 1.0
 material = SubResource("ShaderMaterial_8pqae")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhsbs"]
+cull_mode = 2
 albedo_color = Color(0.29803923, 0.21568628, 1, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_8pqae"]
 material = SubResource("StandardMaterial3D_nhsbs")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47tsv"]
+cull_mode = 2
 albedo_color = Color(0.7301642, 2.1658839e-06, 0.42577317, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_dc0lp"]
 material = SubResource("StandardMaterial3D_47tsv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc0lp"]
+cull_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_usvdu"]
 material = SubResource("StandardMaterial3D_dc0lp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_usvdu"]
+shader = ExtResource("6_dc0lp")
+shader_parameter/source_panorama = ExtResource("4_47tsv")
+shader_parameter/exposure = 1.0
 
 [node name="CubemapRenderer" type="Node3D" unique_id=1886500804 node_paths=PackedStringArray("material")]
 script = ExtResource("1_nhsbs")
@@ -68,3 +77,19 @@ mesh = SubResource("QuadMesh_usvdu")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=601347437]
 transform = Transform3D(0.8660254, 0.24999999, 0.43301272, -0.5, 0.43301266, 0.75, 0, -0.86602545, 0.49999997, 0, 0, 0)
+
+[node name="CubemapTo2D" type="SubViewport" parent="." unique_id=1131027527]
+disable_3d = true
+size = Vector2i(512, 256)
+render_target_update_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="CubemapTo2D" unique_id=1118475124]
+material = SubResource("ShaderMaterial_usvdu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.5728569, 0.15360814, 0.56640714, 1)

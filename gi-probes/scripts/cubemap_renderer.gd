@@ -5,15 +5,27 @@ extends Node3D
 
 @export var material: Node3D
 
-var cubemap
+#var cubemap
 
 func _ready():
 	var map = await capture_cubemap(global_transform.origin)
 	
-	cubemap = map
+#	cubemap = map
 	
 	var mat = material.get_active_material(0)
 	mat.set_shader_parameter("source_panorama", map)
+	
+	# assign the cubemap to the helper
+	var mat2 = $CubemapTo2D/ColorRect.material
+	mat2.set_shader_parameter("source_panorama", map)
+	
+	# not yet working (need to play around with)
+	await RenderingServer.frame_post_draw
+	
+	var img : Image = $CubemapTo2D.get_texture().get_image()
+	
+	print(spherical_harmonics(img))
+	 
 
 """
 func _unhandled_input(event: InputEvent) -> void:
@@ -53,3 +65,33 @@ func capture_cubemap(pos: Vector3) -> Cubemap:
 	cubemap.create_from_images(images)
 	
 	return cubemap
+
+func spherical_harmonics(sphere : Image) -> Array[float]:
+	
+	var c := [	0.0, 
+				0.0, 0.0, 0.0, 
+				0.0, 0.0, 0.0, 0.0, 0.0]
+	
+	# numerical integration
+	for x in sphere.get_width():
+		for y in sphere.get_height():
+			var φ = float(x) / sphere.get_width() * 2 * PI
+			var θ = float(y) / sphere.get_height() * PI
+			
+			var G = sphere.get_pixel(x, y)
+			
+			var sin_θ = sin(θ)
+			var sin_φ = sin(φ)
+			var cos_θ = cos(θ)
+			var cos_φ = cos(φ)
+			
+			# I = G(θ,φ) * Y(θ,φ) * sin(θ)
+			# these are pure magic 
+			c[0] += G						* sin_θ
+			c[1] += G * sin_θ * sin_φ		* sin_θ
+	
+	# normalization constants
+	c[0] *= 0.282095
+	c[1] *= 0.488603
+	
+	return [0.0]
