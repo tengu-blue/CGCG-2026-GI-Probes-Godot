@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b7eeyetkbrrs"
+path="res://.godot/imported/grasslands_sunset_1k.hdr-600d7584b092ab0df7f81ab2b1ee2e7e.image"
+
+[deps]
+
+source_file="res://textures/grasslands_sunset_1k.hdr"
+dest_files=["res://.godot/imported/grasslands_sunset_1k.hdr-600d7584b092ab0df7f81ab2b1ee2e7e.image"]
+
+[params]
+
