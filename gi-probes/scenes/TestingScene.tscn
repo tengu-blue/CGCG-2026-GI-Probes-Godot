@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://d2f0c2l4s0b56"]
+
+[ext_resource type="Environment" uid="uid://d4eom8iwy80lv" path="res://env/sky_env.tres" id="1_iumwr"]
+[ext_resource type="Script" uid="uid://iam1ucpyv6nk" path="res://scripts/controller.gd" id="2_ngj44"]
+[ext_resource type="PackedScene" uid="uid://c6nfxiobkdttr" path="res://scenes/cubemap_renderer.tscn" id="3_ngj44"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhsbs"]
+cull_mode = 2
+albedo_color = Color(0.29803923, 0.21568628, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vgrjl"]
+material = SubResource("StandardMaterial3D_nhsbs")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47tsv"]
+cull_mode = 2
+albedo_color = Color(0.7301642, 2.1658839e-06, 0.42577317, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_1oea7"]
+material = SubResource("StandardMaterial3D_47tsv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc0lp"]
+cull_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_3keet"]
+material = SubResource("StandardMaterial3D_dc0lp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngj44"]
+cull_mode = 2
+albedo_color = Color(0.04628312, 0.78339714, 0.30522546, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_sfxgc"]
+material = SubResource("StandardMaterial3D_ngj44")
+
+[node name="TestingScene" type="Node3D" unique_id=248501692]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2140383188]
+transform = Transform3D(-0.258819, 0.4205983, -0.86954576, 0, 0.90022016, 0.43543544, 0.9659258, 0.11269896, -0.23299406, -2, 1, -1)
+environment = ExtResource("1_iumwr")
+script = ExtResource("2_ngj44")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=375762521]
+transform = Transform3D(3.9, 0, 0, 0, 3.9, 0, 0, 0, 1, 0, 0, -2.201847)
+mesh = SubResource("QuadMesh_vgrjl")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1488119316]
+transform = Transform3D(-1.7047444e-07, 0, -1.0000001, 0, 3.9000006, 0, 3.9, 0, -4.371139e-08, 2, 0, -0.20184708)
+mesh = SubResource("QuadMesh_1oea7")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=5414595]
+transform = Transform3D(-6.4039096e-15, 3.9000003, 4.371139e-08, 1.7047444e-07, -1.7047444e-07, 1.0000001, 3.8999999, 0, -4.3711385e-08, 0, -2, -0.20184708)
+mesh = SubResource("QuadMesh_3keet")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=496357537]
+transform = Transform3D(-6.4039096e-15, 3.9000003, 4.371139e-08, 1.7047444e-07, -1.7047444e-07, 1.0000001, 3.8999999, 0, -4.3711385e-08, 4, -2, -0.20184708)
+mesh = SubResource("QuadMesh_sfxgc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1724091528]
+transform = Transform3D(0.8660254, 0.24999999, 0.43301272, -0.5, 0.43301266, 0.75, 0, -0.86602545, 0.49999997, 0, 0, 0)
+
+[node name="CubemapRenderer" parent="." unique_id=1886500804 instance=ExtResource("3_ngj44")]
+
+[node name="CubemapRenderer2" parent="." unique_id=69027102 instance=ExtResource("3_ngj44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)

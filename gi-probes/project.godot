@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GI-Probes"
-run/main_scene="uid://c6nfxiobkdttr"
+run/main_scene="uid://d2f0c2l4s0b56"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

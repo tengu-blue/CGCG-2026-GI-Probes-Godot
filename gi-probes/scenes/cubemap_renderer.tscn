@@ -1,82 +1,133 @@
 [gd_scene format=3 uid="uid://c6nfxiobkdttr"]
 
 [ext_resource type="Script" uid="uid://claguvfeyy5vm" path="res://scripts/cubemap_renderer.gd" id="1_nhsbs"]
-[ext_resource type="Shader" uid="uid://codwm2824y6p4" path="res://shaders/reflection_cube_shader.gdshader" id="1_s2iq5"]
 [ext_resource type="Environment" uid="uid://d4eom8iwy80lv" path="res://env/sky_env.tres" id="2_8pqae"]
-[ext_resource type="Script" uid="uid://iam1ucpyv6nk" path="res://scripts/controller.gd" id="4_2kukh"]
-[ext_resource type="Cubemap" uid="uid://dedismpwlm1la" path="res://cubemap.res" id="4_47tsv"]
-[ext_resource type="Shader" uid="uid://bsrfvrnp7mek1" path="res://shaders/cubemap_to_rect.gdshader" id="6_dc0lp"]
+[ext_resource type="Cubemap" uid="uid://bj7odmwsm4lpx" path="res://cubemap.res" id="4_47tsv"]
+
+[sub_resource type="Shader" id="Shader_2kukh"]
+code = "shader_type spatial;
+
+uniform samplerCube source_panorama : filter_linear, source_color, hint_default_black;
+uniform float exposure = 1.0;
+
+void vertex() {
+	
+}
+
+void fragment() {
+	
+	vec3 refl = reflect(VIEW, NORMAL);
+	refl = normalize((INV_VIEW_MATRIX * vec4(refl, 0.0)).xyz);
+	
+	vec3 eyedir = refl;
+    ALBEDO = texture(source_panorama, eyedir).rgb * exposure;
+}
+
+//void light() {
+//	// Called for every pixel for every light affecting the material.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8pqae"]
 render_priority = 0
-shader = ExtResource("1_s2iq5")
+shader = SubResource("Shader_2kukh")
 shader_parameter/source_panorama = ExtResource("4_47tsv")
 shader_parameter/exposure = 1.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_2kukh"]
 material = SubResource("ShaderMaterial_8pqae")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhsbs"]
-cull_mode = 2
-albedo_color = Color(0.29803923, 0.21568628, 1, 1)
+[sub_resource type="Shader" id="Shader_8pqae"]
+code = "shader_type canvas_item;
 
-[sub_resource type="QuadMesh" id="QuadMesh_8pqae"]
-material = SubResource("StandardMaterial3D_nhsbs")
+uniform samplerCube source_panorama : filter_linear, source_color, hint_default_black;
+uniform float exposure = 1.0;
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47tsv"]
-cull_mode = 2
-albedo_color = Color(0.7301642, 2.1658839e-06, 0.42577317, 1)
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
 
-[sub_resource type="QuadMesh" id="QuadMesh_dc0lp"]
-material = SubResource("StandardMaterial3D_47tsv")
+void fragment() {
+	vec3 eyedir = vec3(	sin(UV.y * PI)*cos(UV.x * 2.0 * PI), 
+					   -cos(UV.y * PI),
+						sin(UV.y * PI)*sin(UV.x * 2.0 * PI));
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc0lp"]
-cull_mode = 2
+	COLOR = vec4(texture(source_panorama, eyedir).rgb * exposure, 1.0);
+}
 
-[sub_resource type="QuadMesh" id="QuadMesh_usvdu"]
-material = SubResource("StandardMaterial3D_dc0lp")
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_usvdu"]
-shader = ExtResource("6_dc0lp")
-shader_parameter/source_panorama = ExtResource("4_47tsv")
+shader = SubResource("Shader_8pqae")
 shader_parameter/exposure = 1.0
 
-[node name="CubemapRenderer" type="Node3D" unique_id=1886500804 node_paths=PackedStringArray("material")]
-script = ExtResource("1_nhsbs")
-material = NodePath("MeshInstance3D")
+[sub_resource type="Shader" id="Shader_47tsv"]
+code = "shader_type spatial;
+render_mode unshaded;
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=373210264]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
+uniform vec3 sh[9]; // your 9 coefficients (RGB)
+
+// Real SH basis (same order as before)
+float sh_basis(int i, vec3 n) {
+    float x = n.x;
+    float y = n.y;
+    float z = n.z;
+
+    if (i == 0) return 0.282095;
+	
+    if (i == 1) return 0.488603 * y;
+    if (i == 2) return 0.488603 * z;
+    if (i == 3) return 0.488603 * x;
+
+    if (i == 4) return 1.092548 * x * y;
+    if (i == 5) return 1.092548 * y * z;
+    if (i == 6) return 0.315392 * (3.0 * z * z - 1.0);
+    if (i == 7) return 1.092548 * x * z;
+    if (i == 8) return 0.546274 * (x * x - y * y);
+
+    return 0.0;
+}
+
+void fragment() {
+    vec3 n = normalize((INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
+
+    vec3 color = vec3(0.0);
+    for (int i = 0; i < 9; i++) {
+        color += sh[i] * sh_basis(i, n);
+    }
+
+    ALBEDO = color;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yrnbk"]
+render_priority = 0
+shader = SubResource("Shader_47tsv")
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_kwiqa"]
+material = SubResource("ShaderMaterial_yrnbk")
+
+[node name="CubemapRenderer" type="Node3D" unique_id=1886500804 node_paths=PackedStringArray("mesh", "SH_mesh")]
+script = ExtResource("1_nhsbs")
+mesh = NodePath("ReflectionBall")
+SH_mesh = NodePath("SHBall")
+
+[node name="ReflectionBall" type="MeshInstance3D" parent="." unique_id=373210264]
 mesh = SubResource("SphereMesh_2kukh")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1756049132]
 render_target_update_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=643844602]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
+cull_mask = 1048573
 environment = ExtResource("2_8pqae")
 fov = 90.0
 near = 1.0
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=699826859]
-transform = Transform3D(-0.258819, 0.4205983, -0.86954576, 0, 0.90022016, 0.43543544, 0.9659258, 0.11269896, -0.23299406, -2, 1, -1)
-environment = ExtResource("2_8pqae")
-script = ExtResource("4_2kukh")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=570268646]
-transform = Transform3D(3.9, 0, 0, 0, 3.9, 0, 0, 0, 1, 0, 0, -2.201847)
-mesh = SubResource("QuadMesh_8pqae")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=824039333]
-transform = Transform3D(-1.7047444e-07, 0, -1.0000001, 0, 3.9000006, 0, 3.9, 0, -4.371139e-08, 2, 0, -0.20184708)
-mesh = SubResource("QuadMesh_dc0lp")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1987345467]
-transform = Transform3D(-6.4039096e-15, 3.9000003, 4.371139e-08, 1.7047444e-07, -1.7047444e-07, 1.0000001, 3.8999999, 0, -4.3711385e-08, 0, -2, -0.20184708)
-mesh = SubResource("QuadMesh_usvdu")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=601347437]
-transform = Transform3D(0.8660254, 0.24999999, 0.43301272, -0.5, 0.43301266, 0.75, 0, -0.86602545, 0.49999997, 0, 0, 0)
 
 [node name="CubemapTo2D" type="SubViewport" parent="." unique_id=1131027527]
 disable_3d = true
@@ -93,3 +144,8 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.5728569, 0.15360814, 0.56640714, 1)
+
+[node name="SHBall" type="MeshInstance3D" parent="." unique_id=1154875576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+layers = 2
+mesh = SubResource("SphereMesh_kwiqa")

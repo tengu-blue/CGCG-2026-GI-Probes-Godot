@@ -9,8 +9,8 @@ void vertex() {
 
 void fragment() {
 	vec3 eyedir = vec3(	sin(UV.y * PI)*cos(UV.x * 2.0 * PI), 
-						sin(UV.y * PI)*sin(UV.x * 2.0 * PI),
-						cos(UV.y * PI));
+					   -cos(UV.y * PI),
+						sin(UV.y * PI)*sin(UV.x * 2.0 * PI));
 
 	COLOR = vec4(texture(source_panorama, eyedir).rgb * exposure, 1.0);
 }
