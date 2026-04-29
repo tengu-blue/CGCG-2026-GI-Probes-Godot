@@ -6,6 +6,11 @@
 [ext_resource type="Shader" uid="uid://ele3rp7ri5kn" path="res://shaders/SH_full.gdshader" id="4_3keet"]
 [ext_resource type="PackedScene" uid="uid://c1mit7b1kwset" path="res://scenes/LightProbe.tscn" id="4_vgrjl"]
 [ext_resource type="ArrayMesh" uid="uid://bq0scy88pytsl" path="res://model/horse_mesh.tres" id="5_1oea7"]
+[ext_resource type="Texture2D" uid="uid://dilxc0pcqgla3" path="res://textures/corrugated_iron_diff_1k.png" id="5_c7ykc"]
+[ext_resource type="Texture2D" uid="uid://c6d7uhe160u1p" path="res://textures/corrugated_iron_nor_gl_1k.png" id="6_tghkc"]
+[ext_resource type="Script" uid="uid://dw6sbbwkkm1qr" path="res://scripts/rotate.gd" id="7_sfxgc"]
+[ext_resource type="Texture2D" uid="uid://3nh5ougbatib" path="res://textures/corrugated_iron_rough_1k.png" id="7_vwvft"]
+[ext_resource type="PackedScene" uid="uid://dl5yua800hrkh" path="res://scenes/MaterialAdapter.tscn" id="10_tghkc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhsbs"]
 cull_mode = 2
@@ -13,6 +18,23 @@ albedo_color = Color(0.29803923, 0.21568628, 1, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_vgrjl"]
 material = SubResource("StandardMaterial3D_nhsbs")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_21d78"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(0.11372549, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("5_c7ykc")
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/roughness_texture = ExtResource("7_vwvft")
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/specular_scalar = 0.5
+shader_parameter/normal_texture = ExtResource("6_tghkc")
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_t6aq6"]
+material = SubResource("ShaderMaterial_21d78")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1oea7"]
 cull_mode = 2
@@ -51,7 +73,7 @@ material = SubResource("StandardMaterial3D_ngj44")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3keet"]
 render_priority = 0
 shader = ExtResource("4_3keet")
-shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/specular_scalar = 0.5
@@ -74,8 +96,14 @@ script = ExtResource("2_ngj44")
 transform = Transform3D(3.9, 0, 0, 0, 3.9, 0, 0, 0, 1, 0, 0, -2.201847)
 mesh = SubResource("QuadMesh_vgrjl")
 
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=1731689202]
+transform = Transform3D(2.6211727, 0, 0.74046457, 0, 3.9000006, 0, -2.8878117, 0, 0.6720955, -3.3523183, 0, -0.722553)
+mesh = SubResource("QuadMesh_t6aq6")
+
+[node name="MaterialAdapter" parent="MeshInstance3D7" unique_id=962275067 instance=ExtResource("10_tghkc")]
+
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1456854023]
-transform = Transform3D(3.9, 0, 0, 0, 3.9, 0, 0, 0, 1, 4.02398, 0, 1.9062376)
+transform = Transform3D(3.2100005, 0, 0.56793, 0, 3.9000006, 0, -2.2149267, 0, 0.8230769, 3.7731824, 0, 0.84433556)
 mesh = SubResource("QuadMesh_7tflp")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1488119316]
@@ -95,23 +123,38 @@ transform = Transform3D(0.2500928, -0.4841109, -0.83850473, 0.96822184, 0.125046
 shadow_enabled = true
 
 [node name="LightProbe" parent="." unique_id=335901965 node_paths=PackedStringArray("obj_list") instance=ExtResource("4_vgrjl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5081177, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.855397, 0, 0.35680687)
 obj_list = [NodePath("../HorseToo")]
+min_dist = 0.1
 
 [node name="LightProbe2" parent="." unique_id=160054610 node_paths=PackedStringArray("obj_list") instance=ExtResource("4_vgrjl")]
-transform = Transform3D(0.4383555, 0, 0.8988017, 0, 1, 0, -0.8988017, 0, 0.4383555, 0.9181311, 0, -0.61501884)
-obj_list = [NodePath("../Horse"), NodePath("../MeshInstance3D3"), NodePath("../Cube")]
+transform = Transform3D(0.4383555, 0, 0.8988017, 0, 1, 0, -0.8988017, 0, 0.4383555, 0.9181311, -1.3838625, -1.0640751)
+obj_list = [NodePath("../Horse"), NodePath("../MeshInstance3D3"), NodePath("../Cube"), NodePath("../MeshInstance3D7")]
+min_dist = 1.0
+
+[node name="LightProbe3" parent="." unique_id=1115444501 node_paths=PackedStringArray("obj_list") instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.4383555, 0, 0.8988017, 0, 1, 0, -0.8988017, 0, 0.4383555, -2.569153, -1.3838625, -0.53174984)
+obj_list = [NodePath("../Horse"), NodePath("../MeshInstance3D3"), NodePath("../Cube"), NodePath("../MeshInstance3D7")]
+min_dist = 0.1
 
 [node name="Horse" type="MeshInstance3D" parent="." unique_id=1790103201]
 transform = Transform3D(9.595256, 0, 8.096857, 0, 12.555, 0, -8.096857, 0, 9.595256, -1.1360382, -1.9594297, -0.76824975)
 mesh = ExtResource("5_1oea7")
 blend_shapes/hooves = 0.0
 
+[node name="MaterialAdapter" parent="Horse" unique_id=1964577152 instance=ExtResource("10_tghkc")]
+
 [node name="HorseToo" type="MeshInstance3D" parent="." unique_id=310517748]
-transform = Transform3D(-6.2522435, 0, 10.887491, 0, 12.554998, 0, -10.887491, 0, -6.2522435, 3.4338508, -1.9594297, -0.18325138)
+transform = Transform3D(-9.029636, 0, -8.723167, 0, 12.554998, 0, 8.723167, 0, -9.029636, 3.417808, -1.9594297, -0.6569898)
 mesh = ExtResource("5_1oea7")
 blend_shapes/hooves = 0.0
+script = ExtResource("7_sfxgc")
+
+[node name="MaterialAdapter" parent="HorseToo" unique_id=771506443 instance=ExtResource("10_tghkc")]
 
 [node name="Cube" type="MeshInstance3D" parent="." unique_id=647678197]
-transform = Transform3D(0.39384565, 0.9191766, 4.0178485e-08, 0, -4.371139e-08, 1, 0.9191766, -0.39384565, -1.721554e-08, 0.9244647, -1.4427655, 0.29852527)
+transform = Transform3D(0.39384565, 0.9191766, 4.0178485e-08, 0, -4.371139e-08, 1, 0.9191766, -0.39384565, -1.721554e-08, 0.9244647, -1.4427655, -1.2857809)
 mesh = SubResource("BoxMesh_sfxgc")
+script = ExtResource("7_sfxgc")
+
+[node name="MaterialAdapter" parent="Cube" unique_id=1906509606 instance=ExtResource("10_tghkc")]

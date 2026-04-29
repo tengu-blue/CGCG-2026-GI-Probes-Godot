@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dl5yua800hrkh"]
+
+[ext_resource type="Script" uid="uid://16jr8sq0mk32" path="res://scripts/material_adapter.gd" id="1_jk238"]
+
+[node name="MaterialAdapter" type="Node" unique_id=962275067]
+script = ExtResource("1_jk238")

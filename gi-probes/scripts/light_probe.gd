@@ -4,6 +4,7 @@ func _ready():
 	add_to_group("light_probes")
 
 @export var obj_list : Array[MeshInstance3D]
+@export var min_dist : float
 
 func assign_mats(sh):
 	

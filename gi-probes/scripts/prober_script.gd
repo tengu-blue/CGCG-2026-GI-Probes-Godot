@@ -4,8 +4,8 @@ class_name Prober
 @onready var viewport: Viewport = $SubViewport
 @onready var cam: Camera3D = $SubViewport/Camera3D
 
-func capture(capture_at : Vector3) -> Array[Vector3]:
-	var cubemap := await capture_cubemap(capture_at)
+func capture(capture_at : Vector3, min_dist : float ) -> Array[Vector3]:
+	var cubemap := await capture_cubemap(capture_at, min_dist)
 	
 	var mat = $CubemapTo2D/ColorRect.material
 	mat.set_shader_parameter("source_panorama",  cubemap)
@@ -15,7 +15,6 @@ func capture(capture_at : Vector3) -> Array[Vector3]:
 	var img : Image = $CubemapTo2D.get_texture().get_image()
 	
 	var SH = spherical_harmonics(img) 
-	print(SH)
 	return SH
 
 
@@ -27,7 +26,7 @@ func _unhandled_input(event: InputEvent) -> void:
 """
 
 
-func capture_cubemap(pos: Vector3) -> Cubemap:
+func capture_cubemap(pos: Vector3, min_dist : float) -> Cubemap:
 	# global_transform.origin = pos
 
 	var directions = [
@@ -41,7 +40,7 @@ func capture_cubemap(pos: Vector3) -> Cubemap:
 
 	var images: Array[Image] = []
 	
-	
+	cam.near = min_dist
 	for d in directions:
 		cam.transform = Transform3D().looking_at(d.dir, d.up)
 		cam.global_position = pos

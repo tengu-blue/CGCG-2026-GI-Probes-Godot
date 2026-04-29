@@ -8,7 +8,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mxndo"]
 render_priority = 0
 shader = ExtResource("1_uryik")
-shader_parameter/albedo_color = Color(0.5609549, 0.5609549, 0.5609549, 1)
+shader_parameter/albedo_color = Color(0.7539837, 0.753984, 0.7539835, 1)
 shader_parameter/albedo_texture = ExtResource("1_mrmta")
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/roughness_texture = ExtResource("4_h0x3q")
