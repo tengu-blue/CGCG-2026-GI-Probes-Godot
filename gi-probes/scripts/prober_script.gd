@@ -1,41 +1,23 @@
 extends Node3D
+class_name Prober
 
 @onready var viewport: Viewport = $SubViewport
 @onready var cam: Camera3D = $SubViewport/Camera3D
 
-@export var mesh: MeshInstance3D
-@export var SH_mesh : MeshInstance3D
-
-#var cubemap
-
-func _ready():
-	add_to_group("light_probes")
+func capture(capture_at : Vector3) -> Array[Vector3]:
+	var cubemap := await capture_cubemap(capture_at)
 	
-	var map := await capture_cubemap(global_transform.origin)
-	
-#	cubemap = map
-		
-	var mat = mesh.get_active_material(0).duplicate()
-	mesh.material_override = mat
-	mat.set_shader_parameter("source_panorama", map)
-	
-	# assign the cubemap to the helper
-	var mat2 = $CubemapTo2D/ColorRect.material.duplicate()
-	$CubemapTo2D/ColorRect.material = mat2
-	mat2.set_shader_parameter("source_panorama", map)
-	
+	var mat = $CubemapTo2D/ColorRect.material
+	mat.set_shader_parameter("source_panorama",  cubemap)
 	$CubemapTo2D.render_target_update_mode = SubViewport.UPDATE_ONCE
-	await RenderingServer.frame_post_draw  # wait for render
+	await RenderingServer.frame_post_draw
 	
 	var img : Image = $CubemapTo2D.get_texture().get_image()
 	
 	var SH = spherical_harmonics(img) 
 	print(SH)
-	
-	var sh_mat = SH_mesh.get_active_material(0).duplicate()
-	SH_mesh.material_override = sh_mat
-	sh_mat.set_shader_parameter("sh", SH)
-	 
+	return SH
+
 
 """
 func _unhandled_input(event: InputEvent) -> void:
@@ -62,7 +44,7 @@ func capture_cubemap(pos: Vector3) -> Cubemap:
 	
 	for d in directions:
 		cam.transform = Transform3D().looking_at(d.dir, d.up)
-		cam.position = position
+		cam.global_position = pos
 
 		viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 		await RenderingServer.frame_post_draw  # wait for render

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bc1dct5ka5xvp"]
+
+[ext_resource type="Script" uid="uid://gg48hm0u6ib3" path="res://MyProbesPackage/globals/light_probes_controller_global.gd" id="1_i3wgy"]
+[ext_resource type="PackedScene" uid="uid://uc6sofp5hv7t" path="res://scenes/prober.tscn" id="2_m1202"]
+
+[node name="LightProbesController" type="Node" unique_id=52104406 node_paths=PackedStringArray("prober")]
+script = ExtResource("1_i3wgy")
+prober = NodePath("Prober")
+
+[node name="Prober" parent="." unique_id=1886500804 instance=ExtResource("2_m1202")]

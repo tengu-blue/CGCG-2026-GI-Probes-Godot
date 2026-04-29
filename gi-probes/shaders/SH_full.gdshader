@@ -1,6 +1,6 @@
 shader_type spatial;
 
-render_mode blend_mix, depth_draw_opaque, cull_back, specular_disabled;
+render_mode blend_mix, depth_draw_opaque, specular_disabled, cull_disabled;
 
 // ============================================================
 // MATERIAL INPUTS
@@ -25,6 +25,7 @@ uniform float normal_scale : hint_range(0.0, 4.0) = 1.0;
 // SPHERICAL HARMONICS COEFFICIENTS
 // ============================================================
 
+uniform bool use_sh;
 uniform vec3 sh[9];
 
 // ============================================================
@@ -138,7 +139,8 @@ void fragment() {
 
     // Pre-bake probe lighting into albedo response
     // This keeps SH as diffuse reflectance rather than self-light
-    ALBEDO *= irradiance;
+    if(use_sh)
+		ALBEDO *= irradiance;
 }
 
 // ============================================================
