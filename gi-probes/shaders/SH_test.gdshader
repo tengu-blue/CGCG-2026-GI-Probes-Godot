@@ -5,9 +5,9 @@ uniform vec3 sh[9]; // your 9 coefficients (RGB)
 
 // Real SH basis (same order as before)
 float sh_basis(int i, vec3 n) {
-    float x = n.x;
-    float y = n.y;
-    float z = n.z;
+    float x = -n.x;
+    float y = -n.z;
+    float z = n.y;
 
     if (i == 0) return 0.282095;
 	

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://claguvfeyy5vm" path="res://scripts/cubemap_renderer.gd" id="1_nhsbs"]
 [ext_resource type="Environment" uid="uid://d4eom8iwy80lv" path="res://env/sky_env.tres" id="2_8pqae"]
+[ext_resource type="ArrayMesh" uid="uid://bq0scy88pytsl" path="res://model/horse_mesh.tres" id="4_2kukh"]
 [ext_resource type="Cubemap" uid="uid://bj7odmwsm4lpx" path="res://cubemap.res" id="4_47tsv"]
 
 [sub_resource type="Shader" id="Shader_2kukh"]
@@ -66,52 +67,6 @@ void fragment() {
 shader = SubResource("Shader_8pqae")
 shader_parameter/exposure = 1.0
 
-[sub_resource type="Shader" id="Shader_47tsv"]
-code = "shader_type spatial;
-render_mode unshaded;
-
-uniform vec3 sh[9]; // your 9 coefficients (RGB)
-
-// Real SH basis (same order as before)
-float sh_basis(int i, vec3 n) {
-    float x = n.x;
-    float y = n.y;
-    float z = n.z;
-
-    if (i == 0) return 0.282095;
-	
-    if (i == 1) return 0.488603 * y;
-    if (i == 2) return 0.488603 * z;
-    if (i == 3) return 0.488603 * x;
-
-    if (i == 4) return 1.092548 * x * y;
-    if (i == 5) return 1.092548 * y * z;
-    if (i == 6) return 0.315392 * (3.0 * z * z - 1.0);
-    if (i == 7) return 1.092548 * x * z;
-    if (i == 8) return 0.546274 * (x * x - y * y);
-
-    return 0.0;
-}
-
-void fragment() {
-    vec3 n = normalize((INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
-
-    vec3 color = vec3(0.0);
-    for (int i = 0; i < 9; i++) {
-        color += sh[i] * sh_basis(i, n);
-    }
-
-    ALBEDO = color;
-}"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yrnbk"]
-render_priority = 0
-shader = SubResource("Shader_47tsv")
-shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-
-[sub_resource type="SphereMesh" id="SphereMesh_kwiqa"]
-material = SubResource("ShaderMaterial_yrnbk")
-
 [node name="CubemapRenderer" type="Node3D" unique_id=1886500804 node_paths=PackedStringArray("mesh", "SH_mesh")]
 script = ExtResource("1_nhsbs")
 mesh = NodePath("ReflectionBall")
@@ -146,6 +101,7 @@ size_flags_vertical = 3
 color = Color(0.5728569, 0.15360814, 0.56640714, 1)
 
 [node name="SHBall" type="MeshInstance3D" parent="." unique_id=1154875576]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(4.14, 0, 0, 0, 4.14, 0, 0, 0, 4.14, -1.5003059, -0.4388371, -0.05966115)
 layers = 2
-mesh = SubResource("SphereMesh_kwiqa")
+mesh = ExtResource("4_2kukh")
+blend_shapes/hooves = 0.0

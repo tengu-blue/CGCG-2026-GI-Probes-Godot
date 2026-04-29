@@ -55,9 +55,10 @@ transform = Transform3D(-6.4039096e-15, 3.9000003, 4.371139e-08, 1.7047444e-07, 
 mesh = SubResource("QuadMesh_sfxgc")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1724091528]
-transform = Transform3D(0.8660254, 0.24999999, 0.43301272, -0.5, 0.43301266, 0.75, 0, -0.86602545, 0.49999997, 0, 0, 0)
+transform = Transform3D(0.2500928, -0.4841109, -0.83850473, 0.96822184, 0.12504637, 0.21658668, 1.4901161e-08, -0.86602545, 0.49999994, 0, 0, 0)
+shadow_enabled = true
 
 [node name="CubemapRenderer" parent="." unique_id=1886500804 instance=ExtResource("3_ngj44")]
 
 [node name="CubemapRenderer2" parent="." unique_id=69027102 instance=ExtResource("3_ngj44")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0.7918029)
