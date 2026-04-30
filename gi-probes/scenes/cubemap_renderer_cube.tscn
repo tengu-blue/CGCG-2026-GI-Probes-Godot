@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://c5wcm7ionfqg7"]
+
+[ext_resource type="Script" uid="uid://claguvfeyy5vm" path="res://scripts/cubemap_renderer.gd" id="1_hfdrd"]
+[ext_resource type="Shader" uid="uid://codwm2824y6p4" path="res://shaders/reflection_cube_shader.gdshader" id="2_q64cg"]
+[ext_resource type="Cubemap" uid="uid://bj7odmwsm4lpx" path="res://cubemap.res" id="3_j86nm"]
+[ext_resource type="Environment" uid="uid://d4eom8iwy80lv" path="res://env/sky_env.tres" id="4_2a4ny"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vatgm"]
+render_priority = 0
+shader = ExtResource("2_q64cg")
+shader_parameter/source_panorama = ExtResource("3_j86nm")
+shader_parameter/exposure = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_w1u7a"]
+material = SubResource("ShaderMaterial_vatgm")
+
+[sub_resource type="Shader" id="Shader_8pqae"]
+code = "shader_type canvas_item;
+
+uniform samplerCube source_panorama : filter_linear, source_color, hint_default_black;
+uniform float exposure = 1.0;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	vec3 eyedir = vec3(	sin(UV.y * PI)*cos(UV.x * 2.0 * PI), 
+					   -cos(UV.y * PI),
+						sin(UV.y * PI)*sin(UV.x * 2.0 * PI));
+
+	COLOR = vec4(texture(source_panorama, eyedir).rgb * exposure, 1.0);
+}
+
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_usvdu"]
+shader = SubResource("Shader_8pqae")
+shader_parameter/exposure = 1.0
+
+[sub_resource type="Shader" id="Shader_47tsv"]
+code = "shader_type spatial;
+render_mode unshaded;
+
+uniform vec3 sh[9]; // your 9 coefficients (RGB)
+
+// Real SH basis (same order as before)
+float sh_basis(int i, vec3 n) {
+    float x = n.x;
+    float y = n.y;
+    float z = n.z;
+
+    if (i == 0) return 0.282095;
+	
+    if (i == 1) return 0.488603 * y;
+    if (i == 2) return 0.488603 * z;
+    if (i == 3) return 0.488603 * x;
+
+    if (i == 4) return 1.092548 * x * y;
+    if (i == 5) return 1.092548 * y * z;
+    if (i == 6) return 0.315392 * (3.0 * z * z - 1.0);
+    if (i == 7) return 1.092548 * x * z;
+    if (i == 8) return 0.546274 * (x * x - y * y);
+
+    return 0.0;
+}
+
+void fragment() {
+    vec3 n = normalize((INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
+
+    vec3 color = vec3(0.0);
+    for (int i = 0; i < 9; i++) {
+        color += sh[i] * sh_basis(i, n);
+    }
+
+    ALBEDO = color;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yrnbk"]
+render_priority = 0
+shader = SubResource("Shader_47tsv")
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_kwiqa"]
+material = SubResource("ShaderMaterial_yrnbk")
+
+[node name="CubemapRenderer" type="Node3D" unique_id=1886500804 node_paths=PackedStringArray("mesh", "SH_mesh")]
+script = ExtResource("1_hfdrd")
+mesh = NodePath("ReflectionBall")
+SH_mesh = NodePath("SHBall")
+
+[node name="ReflectionBall" type="MeshInstance3D" parent="." unique_id=373210264]
+mesh = SubResource("BoxMesh_w1u7a")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1756049132]
+render_target_update_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=643844602]
+cull_mask = 1048573
+environment = ExtResource("4_2a4ny")
+fov = 90.0
+near = 1.0
+
+[node name="CubemapTo2D" type="SubViewport" parent="." unique_id=1131027527]
+disable_3d = true
+size = Vector2i(512, 256)
+render_target_update_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="CubemapTo2D" unique_id=1118475124]
+material = SubResource("ShaderMaterial_usvdu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.5728569, 0.15360814, 0.56640714, 1)
+
+[node name="SHBall" type="MeshInstance3D" parent="." unique_id=1154875576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+layers = 2
+mesh = SubResource("SphereMesh_kwiqa")

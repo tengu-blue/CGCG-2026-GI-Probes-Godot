@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bq0scy88pytsl" path="res://model/horse_mesh.tres" id="5_1oea7"]
 [ext_resource type="Texture2D" uid="uid://dilxc0pcqgla3" path="res://textures/corrugated_iron_diff_1k.png" id="5_c7ykc"]
 [ext_resource type="Texture2D" uid="uid://c6d7uhe160u1p" path="res://textures/corrugated_iron_nor_gl_1k.png" id="6_tghkc"]
+[ext_resource type="Texture2D" uid="uid://ctf4bcxq016fp" path="res://textures/corrugated_iron_metal_1k.png" id="6_vwvft"]
 [ext_resource type="Script" uid="uid://dw6sbbwkkm1qr" path="res://scripts/rotate.gd" id="7_sfxgc"]
 [ext_resource type="Texture2D" uid="uid://3nh5ougbatib" path="res://textures/corrugated_iron_rough_1k.png" id="7_vwvft"]
 [ext_resource type="PackedScene" uid="uid://dl5yua800hrkh" path="res://scenes/MaterialAdapter.tscn" id="10_tghkc"]
@@ -27,7 +28,7 @@ shader_parameter/albedo_texture = ExtResource("5_c7ykc")
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/roughness_texture = ExtResource("7_vwvft")
 shader_parameter/metallic_scalar = 0.0
-shader_parameter/specular_scalar = 0.5
+shader_parameter/metallic_texture = ExtResource("6_vwvft")
 shader_parameter/normal_texture = ExtResource("6_tghkc")
 shader_parameter/normal_scale = 1.0
 shader_parameter/use_sh = false
@@ -49,7 +50,6 @@ shader = ExtResource("4_3keet")
 shader_parameter/albedo_color = Color(0.9102938, 0.00067344547, 0.910403, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
-shader_parameter/specular_scalar = 0.5
 shader_parameter/normal_scale = 1.0
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -76,7 +76,6 @@ shader = ExtResource("4_3keet")
 shader_parameter/albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
-shader_parameter/specular_scalar = 0.5
 shader_parameter/normal_scale = 1.0
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
