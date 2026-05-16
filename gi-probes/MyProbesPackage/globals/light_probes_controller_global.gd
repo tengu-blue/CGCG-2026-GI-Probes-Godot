@@ -57,7 +57,7 @@ func update_probes():
 			var closest = get_closest_probe(obj.global_position) 
 			mat.set_shader_parameter("sh", closest)
 		else:
-			print('per vertex')
+			
 			obj.mesh = set_per_vertex_harmonics(obj.global_transform, obj.mesh, mat)
 			obj.set_surface_override_material(0, mat)
 		

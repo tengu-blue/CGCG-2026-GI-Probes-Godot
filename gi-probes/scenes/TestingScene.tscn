@@ -252,7 +252,7 @@ material = SubResource("ShaderMaterial_3keet")
 script = ExtResource("1_vgrjl")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2140383188]
-transform = Transform3D(-0.25881904, 0.42059824, -0.8695458, 0, 0.90022004, 0.43543535, 0.9659259, 0.11269895, -0.23299408, 2.1291146, -3.2682326, -19.371836)
+transform = Transform3D(-0.25881904, 0.42059824, -0.86954576, 0, 0.90022004, 0.43543535, 0.9659259, 0.11269895, -0.23299406, 4.721637, -3.2682326, -3.7827709)
 environment = ExtResource("1_iumwr")
 script = ExtResource("2_ngj44")
 
@@ -419,6 +419,16 @@ min_dist = 0.1
 
 [node name="LightProbe6" parent="." unique_id=698683971 node_paths=PackedStringArray("obj_list") instance=ExtResource("4_vgrjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0687695, -1, 8.211742)
+obj_list = [NodePath("../HorseToo")]
+min_dist = 0.1
+
+[node name="LightProbe10" parent="." unique_id=1145598840 node_paths=PackedStringArray("obj_list") instance=ExtResource("4_vgrjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.001358, -1, 6.312933)
+obj_list = [NodePath("../HorseToo")]
+min_dist = 0.1
+
+[node name="LightProbe11" parent="." unique_id=808156998 node_paths=PackedStringArray("obj_list") instance=ExtResource("4_vgrjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0351567, -1, 8.306875)
 obj_list = [NodePath("../HorseToo")]
 min_dist = 0.1
 
