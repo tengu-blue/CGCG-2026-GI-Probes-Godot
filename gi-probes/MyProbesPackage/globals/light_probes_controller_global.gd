@@ -9,7 +9,9 @@ func _ready() -> void:
 
 # TODO: proper kd closest find
 func get_closest_probe(pos : Vector3):	
-	return all_probes.query(pos)
+	var val := all_probes.query(pos)
+	print(val)
+	return val
 
 
 var t := false

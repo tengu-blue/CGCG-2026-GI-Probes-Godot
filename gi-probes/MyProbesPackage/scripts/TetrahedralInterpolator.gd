@@ -37,14 +37,20 @@ func query(position: Vector3) -> Array[Vector3]:
 		var bary = _barycentric_coords(position, tet)
 
 		if bary != null:
-			return (
-				bary[0] * points[tet.indices[0]].value +
-				bary[1] * points[tet.indices[1]].value +
-				bary[2] * points[tet.indices[2]].value +
-				bary[3] * points[tet.indices[3]].value
-			)
+			
+			var result : Array[Vector3] = []
+			for harmonics in range(9):
+				var sh : Vector3 = Vector3.ZERO
+				for i in 4:
+					sh += bary[i] * points[tet.indices[i]].value[harmonics]
+					
+				result.push_back(sh)
+				
+			print('Weighing')
+			return result
 
 	# if outside -> 
+	print('Nearest')
 	return _nearest_neighbor(position)
 
 

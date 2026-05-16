@@ -89,12 +89,44 @@ shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 [sub_resource type="QuadMesh" id="QuadMesh_mubh6"]
 material = SubResource("ShaderMaterial_t6aq6")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngj44"]
-cull_mode = 2
-albedo_color = Color(0.04628312, 0.78339714, 0.30522546, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mubh6"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(1, 0, 0, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
-[sub_resource type="QuadMesh" id="QuadMesh_sfxgc"]
-material = SubResource("StandardMaterial3D_ngj44")
+[sub_resource type="QuadMesh" id="QuadMesh_dov18"]
+material = SubResource("ShaderMaterial_mubh6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rgvs7"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(0, 0.8392157, 0, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ww7ag"]
+material = SubResource("ShaderMaterial_rgvs7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d6cit"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_7o38s"]
+material = SubResource("ShaderMaterial_d6cit")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3keet"]
 render_priority = 0
@@ -108,6 +140,15 @@ shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 
 [sub_resource type="BoxMesh" id="BoxMesh_sfxgc"]
 material = SubResource("ShaderMaterial_3keet")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vwvft"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngj44"]
+cull_mode = 2
+albedo_color = Color(0.04628312, 0.78339714, 0.30522546, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_sfxgc"]
+material = SubResource("StandardMaterial3D_ngj44")
 
 [node name="TestingScene" type="Node3D" unique_id=248501692]
 script = ExtResource("1_vgrjl")
@@ -163,6 +204,82 @@ mesh = SubResource("QuadMesh_mubh6")
 
 [node name="MaterialAdapter" parent="MeshInstance3D11" unique_id=1848320668 instance=ExtResource("10_tghkc")]
 
+[node name="Box" type="Node3D" parent="." unique_id=700997056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -26.428493)
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Box" unique_id=1045790505]
+transform = Transform3D(-1.7484555e-07, 4, 0, -4, -1.7484555e-07, 0, 0, 0, 1, -5.165694, 0.5556035, 10.12489)
+gi_mode = 0
+mesh = SubResource("QuadMesh_dov18")
+
+[node name="MaterialAdapter" parent="Box/MeshInstance3D14" unique_id=1756384175 instance=ExtResource("10_tghkc")]
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="Box" unique_id=1802240432]
+transform = Transform3D(-1.7484555e-07, 4, 0, -4, -1.7484555e-07, 0, 0, 0, 1, -5.165694, 0.5556035, 6.1248903)
+gi_mode = 0
+mesh = SubResource("QuadMesh_ww7ag")
+
+[node name="MaterialAdapter" parent="Box/MeshInstance3D17" unique_id=1112307276 instance=ExtResource("10_tghkc")]
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Box" unique_id=1049503437]
+transform = Transform3D(-1.7484555e-07, 4, 0, 1.7484555e-07, 7.642742e-15, -1, -4, -1.7484555e-07, -4.371139e-08, -5.165694, -1.4443965, 8.12489)
+gi_mode = 0
+mesh = SubResource("QuadMesh_7o38s")
+
+[node name="MaterialAdapter" parent="Box/MeshInstance3D15" unique_id=2061411 instance=ExtResource("10_tghkc")]
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="Box" unique_id=2097203087]
+transform = Transform3D(-1.7484555e-07, 0, 1, 0, 4, 0, -4, 0, -4.371139e-08, -7.165694, 0.5556035, 8.12489)
+gi_mode = 0
+mesh = SubResource("QuadMesh_7o38s")
+
+[node name="MaterialAdapter" parent="Box/MeshInstance3D18" unique_id=1759486720 instance=ExtResource("10_tghkc")]
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Box" unique_id=1070141960]
+transform = Transform3D(-1.7484555e-07, 4, 0, 1.7484555e-07, 7.642742e-15, -1, -4, -1.7484555e-07, -4.371139e-08, -5.165694, 2.5556035, 8.12489)
+gi_mode = 0
+mesh = SubResource("QuadMesh_7o38s")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Box" unique_id=1799588999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.166, 2.2293284, 8.125)
+omni_range = 2.5257335
+
+[node name="LightProbe4" parent="Box" unique_id=160054610 node_paths=PackedStringArray("obj_list") instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.4383555, 0, 0.8988017, 0, 1, 0, -0.8988017, 0, 0.4383555, -5.7692327, -0.69526774, 7.224457)
+obj_list = [NodePath("../../Horse"), NodePath("../../MeshInstance3D3"), NodePath("../../Cube"), NodePath("../../MeshInstance3D7")]
+min_dist = 0.1
+
+[node name="LightProbe5" parent="Box" unique_id=1751446334 node_paths=PackedStringArray("obj_list") instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.4383555, 0, 0.8988017, 0, 1, 0, -0.8988017, 0, 0.4383555, -4.0781007, -0.69526774, 9.275585)
+obj_list = [NodePath("../../Horse"), NodePath("../../MeshInstance3D3"), NodePath("../../Cube"), NodePath("../../MeshInstance3D7")]
+min_dist = 0.1
+
+[node name="LightProbe6" parent="Box" unique_id=1623260664 node_paths=PackedStringArray("obj_list") instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.4383555, 0, 0.8988017, 0, 1, 0, -0.8988017, 0, 0.4383555, -6.333234, 1.695431, 9.275585)
+obj_list = [NodePath("../../Horse"), NodePath("../../MeshInstance3D3"), NodePath("../../Cube"), NodePath("../../MeshInstance3D7")]
+min_dist = 0.1
+
+[node name="LightProbe7" parent="Box" unique_id=247234254 node_paths=PackedStringArray("obj_list") instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.4383555, 0, 0.8988017, 0, 1, 0, -0.8988017, 0, 0.4383555, -4.362792, 1.0081377, 6.977743)
+obj_list = [NodePath("../../Horse"), NodePath("../../MeshInstance3D3"), NodePath("../../Cube"), NodePath("../../MeshInstance3D7")]
+min_dist = 0.1
+
+[node name="Cube2" type="MeshInstance3D" parent="Box" unique_id=475698435]
+transform = Transform3D(0.9124989, 0.40907916, 1.7881419e-08, 0, -4.371139e-08, 1, 0.40907916, -0.9124989, -3.9886594e-08, -4.2767496, -0.9499294, 7.332425)
+mesh = SubResource("BoxMesh_sfxgc")
+
+[node name="MaterialAdapter" parent="Box/Cube2" unique_id=1518741182 instance=ExtResource("10_tghkc")]
+
+[node name="Cube3" type="MeshInstance3D" parent="Box" unique_id=841203099]
+transform = Transform3D(0.8664178, -0.49931964, -5.801668e-08, 0, -4.3711385e-08, 2.658151, -0.49931967, -0.86641777, -1.00670356e-07, -5.646571, -0.090825975, 8.900387)
+mesh = SubResource("BoxMesh_sfxgc")
+
+[node name="MaterialAdapter" parent="Box/Cube3" unique_id=610833335 instance=ExtResource("10_tghkc")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box" unique_id=1180849479]
+transform = Transform3D(4.125716, -4.879425, -2.7535074, -1.0106101, 9.097191, -3.7261863, 3.299054, 8.8888645, 2.3020146, -9.499085, 1.2654724, 12.331887)
+mesh = SubResource("PlaneMesh_vwvft")
+
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=496357537]
 transform = Transform3D(-6.4039096e-15, 3.9000003, 4.371139e-08, 1.7047444e-07, -1.7047444e-07, 1.0000001, 3.8999999, 0, -4.3711385e-08, 4, -2, -0.20184708)
 mesh = SubResource("QuadMesh_sfxgc")
@@ -200,6 +317,7 @@ blend_shapes/hooves = 0.0
 
 [node name="HorseToo" type="MeshInstance3D" parent="." unique_id=310517748]
 transform = Transform3D(-9.029636, 0, -8.723167, 0, 12.554998, 0, 8.723167, 0, -9.029636, 3.417808, -1.9594297, -0.6569898)
+gi_mode = 0
 mesh = ExtResource("5_1oea7")
 blend_shapes/hooves = 0.0
 script = ExtResource("7_sfxgc")
