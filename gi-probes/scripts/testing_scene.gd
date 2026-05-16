@@ -10,3 +10,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("update_probes"):
 		LightProbesController.update_probes()
+	elif Input.is_action_just_pressed("toggle_probes"):
+		LightProbesController.toggle()

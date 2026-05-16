@@ -1,19 +1,25 @@
 extends Node
 
 @export var prober : Prober
+var all_probes : TetrahedralInterpolator
+
+func _ready() -> void:
+	all_probes = TetrahedralInterpolator.new()
+
 
 # TODO: proper kd closest find
-func get_closest_probe(pos : Vector3, probes, sh):	
-	var closest_ids = -1
-	var closest_dist = INF
+func get_closest_probe(pos : Vector3):	
+	return all_probes.query(pos)
 
-	for idx in range(len(probes)):
-		var d = pos.distance_squared_to(probes[idx].global_position)
-		if d < closest_dist:
-			closest_dist = d
-			closest_ids = idx
-		
-	return sh[closest_ids]
+
+var t := false
+func toggle():
+	var materials = get_tree().get_nodes_in_group("update_materials")
+	for obj in materials:
+		var mat = obj.get_active_material(0)
+		mat.set_shader_parameter("use_sh", t)
+	
+	t = not t
 
 # on update_probes()
 func update_probes():
@@ -29,6 +35,16 @@ func update_probes():
 		# debug test
 		# probe.debug_set(sh)
 	
+	# store the harmonics and positions
+	var positions: Array[Vector3] = []
+
+	for probe in probes:
+		positions.append(probe.global_position)
+	
+	all_probes.build(positions, sh_harmonics)
+	
+	
+	
 	# only set the values to all, once all computed	
 	# for i in range(len(probes)):
 	#	probes[i].assign_mats(sh_harmonics[i])
@@ -41,5 +57,5 @@ func update_probes():
 		obj.set_surface_override_material(0, mat)
 		
 		mat.set_shader_parameter("use_sh", true)
-		var closest = get_closest_probe(obj.global_position, probes, sh_harmonics) 
+		var closest = get_closest_probe(obj.global_position) 
 		mat.set_shader_parameter("sh", closest)

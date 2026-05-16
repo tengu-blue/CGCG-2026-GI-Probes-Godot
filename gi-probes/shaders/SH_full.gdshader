@@ -156,7 +156,7 @@ void light() {
  	 	diffuse_out = diffuse * radiance * NdotL;
  	 	specular_out = specular * radiance * NdotL;
  	}
-
+	
  	DIFFUSE_LIGHT += diffuse_out;
  	SPECULAR_LIGHT += specular_out;
 }

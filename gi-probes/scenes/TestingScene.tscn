@@ -20,6 +20,19 @@ albedo_color = Color(0.29803923, 0.21568628, 1, 1)
 [sub_resource type="QuadMesh" id="QuadMesh_vgrjl"]
 material = SubResource("StandardMaterial3D_nhsbs")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vwvft"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(0, 0.03137255, 1, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_21d78"]
+material = SubResource("ShaderMaterial_vwvft")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_21d78"]
 render_priority = 0
 shader = ExtResource("4_3keet")
@@ -63,6 +76,19 @@ cull_mode = 2
 [sub_resource type="QuadMesh" id="QuadMesh_3keet"]
 material = SubResource("StandardMaterial3D_dc0lp")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t6aq6"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_mubh6"]
+material = SubResource("ShaderMaterial_t6aq6")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngj44"]
 cull_mode = 2
 albedo_color = Color(0.04628312, 0.78339714, 0.30522546, 1)
@@ -95,11 +121,17 @@ script = ExtResource("2_ngj44")
 transform = Transform3D(3.9, 0, 0, 0, 3.9, 0, 0, 0, 1, 0, 0, -2.201847)
 mesh = SubResource("QuadMesh_vgrjl")
 
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="." unique_id=683795987]
+transform = Transform3D(3.7671108, 0, 0.25881907, 0, 3.900001, 0, -1.0093943, 0, 0.9659258, 4, 0, 5.798153)
+mesh = SubResource("QuadMesh_21d78")
+
+[node name="MaterialAdapter" parent="MeshInstance3D10" unique_id=962275067 instance=ExtResource("10_tghkc")]
+
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=1731689202]
 transform = Transform3D(2.6211727, 0, 0.74046457, 0, 3.9000006, 0, -2.8878117, 0, 0.6720955, -3.3523183, 0, -0.722553)
 mesh = SubResource("QuadMesh_t6aq6")
 
-[node name="MaterialAdapter" parent="MeshInstance3D7" unique_id=962275067 instance=ExtResource("10_tghkc")]
+[node name="MaterialAdapter" parent="MeshInstance3D7" unique_id=560591108 instance=ExtResource("10_tghkc")]
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1456854023]
 transform = Transform3D(3.2100005, 0, 0.56793, 0, 3.9000006, 0, -2.2149267, 0, 0.8230769, 3.7731824, 0, 0.84433556)
@@ -109,9 +141,27 @@ mesh = SubResource("QuadMesh_7tflp")
 transform = Transform3D(-1.7047444e-07, 0, -1.0000001, 0, 3.9000006, 0, 3.9, 0, -4.371139e-08, 2, 0, -0.20184708)
 mesh = SubResource("QuadMesh_1oea7")
 
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=396465278]
+transform = Transform3D(1.009394, 0, -0.9659259, 0, 3.9000006, 0, 3.7671106, 0, 0.258819, 5, 0, 6.798153)
+mesh = SubResource("QuadMesh_1oea7")
+
+[node name="MaterialAdapter" parent="MeshInstance3D9" unique_id=225455666 instance=ExtResource("10_tghkc")]
+
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=5414595]
 transform = Transform3D(-6.4039096e-15, 3.9000003, 4.371139e-08, 1.7047444e-07, -1.7047444e-07, 1.0000001, 3.8999999, 0, -4.3711385e-08, 0, -2, -0.20184708)
 mesh = SubResource("QuadMesh_3keet")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=127213083]
+transform = Transform3D(1.6887498, 2.8169495e-07, 0.49999982, 2.9444183e-07, -3.9, -1.1707351e-07, 0.97499967, 6.898574e-07, -0.8660255, 1.9861456, -0.24948972, 7.944854)
+mesh = SubResource("QuadMesh_mubh6")
+
+[node name="MaterialAdapter" parent="MeshInstance3D8" unique_id=1809031653 instance=ExtResource("10_tghkc")]
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="." unique_id=568672119]
+transform = Transform3D(1.6887498, 2.8169495e-07, 0.49999982, 2.9444183e-07, -3.9, -1.1707351e-07, 0.97499967, 6.898574e-07, -0.8660255, 3.673631, -0.24948943, 8.919124)
+mesh = SubResource("QuadMesh_mubh6")
+
+[node name="MaterialAdapter" parent="MeshInstance3D11" unique_id=1848320668 instance=ExtResource("10_tghkc")]
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=496357537]
 transform = Transform3D(-6.4039096e-15, 3.9000003, 4.371139e-08, 1.7047444e-07, -1.7047444e-07, 1.0000001, 3.8999999, 0, -4.3711385e-08, 4, -2, -0.20184708)
@@ -126,7 +176,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.855397, 0, 0.35680687)
 obj_list = [NodePath("../HorseToo")]
 min_dist = 0.1
 
-[node name="LightProbe2" parent="." unique_id=160054610 node_paths=PackedStringArray("obj_list") instance=ExtResource("4_vgrjl")]
+[node name="LightProbe5" parent="." unique_id=1332417190 node_paths=PackedStringArray("obj_list") instance=ExtResource("4_vgrjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5031943, -1, 6.93104)
+obj_list = [NodePath("../HorseToo")]
+min_dist = 0.1
+
+[node name="LightProbe2" parent="." unique_id=1133209043 node_paths=PackedStringArray("obj_list") instance=ExtResource("4_vgrjl")]
 transform = Transform3D(0.4383555, 0, 0.8988017, 0, 1, 0, -0.8988017, 0, 0.4383555, 0.9181311, -1.3838625, -1.0640751)
 obj_list = [NodePath("../Horse"), NodePath("../MeshInstance3D3"), NodePath("../Cube"), NodePath("../MeshInstance3D7")]
 min_dist = 1.0
