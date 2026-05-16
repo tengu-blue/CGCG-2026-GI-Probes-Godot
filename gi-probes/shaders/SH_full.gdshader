@@ -18,6 +18,16 @@ uniform float normal_scale : hint_range(0.0, 4.0) = 1.0;
 
 // Harmonics
 
+uniform bool use_custom;
+varying vec3 custom_sh[4];
+
+void vertex() {
+	custom_sh[0] = CUSTOM0.rgb;
+	custom_sh[1] = CUSTOM1.rgb;
+	custom_sh[2] = CUSTOM2.rgb;
+	custom_sh[3] = CUSTOM3.rgb;
+}
+
 uniform bool use_sh;
 uniform vec3 sh[9];
 
@@ -41,9 +51,15 @@ float basis[9];
 
  	vec3 result = vec3(0.0);
 
- 	for (int i = 0; i < 9; i++) {
- 	 	result += sh[i] * basis[i];
- 	}
+	if(!use_custom) {
+	 	for (int i = 0; i < 9; i++) {
+	 	 	result += sh[i] * basis[i];
+	 	}
+	} else {
+		for (int i = 0; i < 4; i++) {
+	 	 	result += custom_sh[i] * basis[i];
+	 	}
+	}
 
  	return max(result, vec3(0.0));
 }

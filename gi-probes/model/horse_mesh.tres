@@ -15,6 +15,7 @@ shader_parameter/roughness_texture = ExtResource("4_h0x3q")
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_texture = ExtResource("2_twwd2")
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
@@ -28,6 +29,7 @@ shader_parameter/roughness_texture = ExtResource("4_h0x3q")
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_texture = ExtResource("2_twwd2")
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 

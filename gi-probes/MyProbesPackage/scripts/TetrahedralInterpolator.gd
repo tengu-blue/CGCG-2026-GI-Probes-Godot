@@ -46,11 +46,9 @@ func query(position: Vector3) -> Array[Vector3]:
 					
 				result.push_back(sh)
 				
-			print('Weighing')
 			return result
 
 	# if outside -> 
-	print('Nearest')
 	return _nearest_neighbor(position)
 
 
