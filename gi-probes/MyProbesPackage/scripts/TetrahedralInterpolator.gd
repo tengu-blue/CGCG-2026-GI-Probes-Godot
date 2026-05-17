@@ -268,7 +268,10 @@ func _nearest(p: Vector3) -> Array[Vector3]:
 		if d < best:
 			best = d
 			idx = i
-
+	
+	if(len(points) <= 0):
+		return [Vector3.ZERO]
+	
 	return points[idx].value
 
 
