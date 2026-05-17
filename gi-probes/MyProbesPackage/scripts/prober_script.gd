@@ -18,14 +18,6 @@ func capture(capture_at : Vector3, min_dist : float ) -> Array[Vector3]:
 	return SH
 
 
-"""
-func _unhandled_input(event: InputEvent) -> void:
-	
-	if event.is_action_pressed("ui_accept"):
-		ResourceSaver.save(cubemap, "res://cubemap.res", ResourceSaver.FLAG_COMPRESS)
-"""
-
-
 func capture_cubemap(pos: Vector3, min_dist : float) -> Cubemap:
 	# global_transform.origin = pos
 
