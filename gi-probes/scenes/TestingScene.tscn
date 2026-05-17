@@ -3,12 +3,12 @@
 [ext_resource type="Environment" uid="uid://d4eom8iwy80lv" path="res://env/sky_env.tres" id="1_iumwr"]
 [ext_resource type="Script" uid="uid://b2d3r5btppmvb" path="res://scripts/testing_scene.gd" id="1_vgrjl"]
 [ext_resource type="Script" uid="uid://iam1ucpyv6nk" path="res://scripts/controller.gd" id="2_ngj44"]
-[ext_resource type="Shader" uid="uid://ele3rp7ri5kn" path="res://shaders/SH_full.gdshader" id="4_3keet"]
-[ext_resource type="PackedScene" uid="uid://c1mit7b1kwset" path="res://scenes/LightProbe.tscn" id="4_vgrjl"]
+[ext_resource type="Shader" uid="uid://ele3rp7ri5kn" path="res://MyProbesPackage/shaders/SH_full.gdshader" id="4_3keet"]
+[ext_resource type="PackedScene" uid="uid://c1mit7b1kwset" path="res://MyProbesPackage/scenes/LightProbe.tscn" id="4_vgrjl"]
 [ext_resource type="Script" uid="uid://btpjpvyiurrnu" path="res://scripts/moving_block_preview.gd" id="7_7tflp"]
 [ext_resource type="Script" uid="uid://rmm6kt2qjq5y" path="res://scripts/rotate_block.gd" id="7_q4mil"]
 [ext_resource type="Texture2D" uid="uid://wcx3nnokf6g5" path="res://model/textures/horse_statue_01_diff_1k.png" id="9_tghkc"]
-[ext_resource type="PackedScene" uid="uid://dl5yua800hrkh" path="res://scenes/MaterialAdapter.tscn" id="10_tghkc"]
+[ext_resource type="PackedScene" uid="uid://dl5yua800hrkh" path="res://MyProbesPackage/scenes/MaterialAdapter.tscn" id="10_tghkc"]
 [ext_resource type="Texture2D" uid="uid://husg8kyddhcp" path="res://model/textures/horse_statue_01_nor_gl_1k.png" id="10_vwvft"]
 [ext_resource type="Texture2D" uid="uid://c4gdkhmsab2b3" path="res://model/textures/horse_statue_01_rough_1k.png" id="11_21d78"]
 
@@ -1172,6 +1172,9 @@ transform = Transform3D(0.09205465, 0, 0.18874834, 0, 0.21, 0, -0.18874834, 0, 0
 
 [node name="LightProbe7" parent="Box_FullCustom" unique_id=1022256844 instance=ExtResource("4_vgrjl")]
 transform = Transform3D(0.041643772, 0, 0.08538616, 0, 0.095, 0, -0.08538616, 0, 0.041643772, -0.25873852, 1.1433425, 2.728139)
+
+[node name="LightProbe11" parent="Box_FullCustom" unique_id=698069805 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.041643772, 0, 0.08538616, 0, 0.095, 0, -0.08538616, 0, 0.041643772, 0.07655048, 1.7954823, 2.6980836)
 
 [node name="SmallBlock" type="MeshInstance3D" parent="Box_FullCustom" unique_id=475698435]
 transform = Transform3D(0.22812472, 0.1022698, 4.4703548e-09, 0, -1.0927847e-08, 0.25, 0.1022698, -0.22812472, -9.971648e-09, 0.27290535, 1.1316025, 2.7874794)

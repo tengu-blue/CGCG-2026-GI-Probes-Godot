@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctf4bcxq016fp"
-path.s3tc="res://.godot/imported/corrugated_iron_metal_1k.png-eb459cca134c8b6796cb22198baeb088.s3tc.ctex"
+uid="uid://bacdap2eqv3g7"
+path.bptc="res://.godot/imported/pretoria_gardens_1k.hdr-4c0f29459fd5921d327562463d41b7df.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/corrugated_iron_metal_1k.png"
-dest_files=["res://.godot/imported/corrugated_iron_metal_1k.png-eb459cca134c8b6796cb22198baeb088.s3tc.ctex"]
+source_file="res://env/pretoria_gardens_1k.hdr"
+dest_files=["res://.godot/imported/pretoria_gardens_1k.hdr-4c0f29459fd5921d327562463d41b7df.bptc.ctex"]
 
 [params]
 

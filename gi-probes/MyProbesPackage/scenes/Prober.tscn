@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://uc6sofp5hv7t"]
 
-[ext_resource type="Script" uid="uid://bmkku0mxlhaaj" path="res://scripts/prober_script.gd" id="1_kuead"]
-[ext_resource type="Environment" uid="uid://d4eom8iwy80lv" path="res://env/sky_env.tres" id="3_dxy1x"]
-[ext_resource type="Shader" uid="uid://bsrfvrnp7mek1" path="res://shaders/cubemap_to_rect.gdshader" id="3_nhtyv"]
+[ext_resource type="Script" uid="uid://bmkku0mxlhaaj" path="res://MyProbesPackage/scripts/prober_script.gd" id="1_gn3qm"]
+[ext_resource type="Environment" uid="uid://d4eom8iwy80lv" path="res://env/sky_env.tres" id="2_aaisp"]
+[ext_resource type="Shader" uid="uid://bsrfvrnp7mek1" path="res://MyProbesPackage/shaders/cubemap_to_rect.gdshader" id="3_qtvi2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_usvdu"]
-shader = ExtResource("3_nhtyv")
+shader = ExtResource("3_qtvi2")
 shader_parameter/exposure = 1.0
 
 [node name="Prober" type="Node3D" unique_id=1886500804]
-script = ExtResource("1_kuead")
+script = ExtResource("1_gn3qm")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1756049132]
 render_target_update_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=643844602]
 cull_mask = 1048573
-environment = ExtResource("3_dxy1x")
+environment = ExtResource("2_aaisp")
 fov = 90.0
 near = 1.0
 

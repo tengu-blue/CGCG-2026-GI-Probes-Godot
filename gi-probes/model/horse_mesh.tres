@@ -1,7 +1,7 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://bq0scy88pytsl"]
 
 [ext_resource type="Texture2D" uid="uid://wcx3nnokf6g5" path="res://model/textures/horse_statue_01_diff_1k.png" id="1_mrmta"]
-[ext_resource type="Shader" uid="uid://ele3rp7ri5kn" path="res://shaders/SH_full.gdshader" id="1_uryik"]
+[ext_resource type="Shader" uid="uid://ele3rp7ri5kn" path="res://MyProbesPackage/shaders/SH_full.gdshader" id="1_uryik"]
 [ext_resource type="Texture2D" uid="uid://husg8kyddhcp" path="res://model/textures/horse_statue_01_nor_gl_1k.png" id="2_twwd2"]
 [ext_resource type="Texture2D" uid="uid://c4gdkhmsab2b3" path="res://model/textures/horse_statue_01_rough_1k.png" id="4_h0x3q"]
 

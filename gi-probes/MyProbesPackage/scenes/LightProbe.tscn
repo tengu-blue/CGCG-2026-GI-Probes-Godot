@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1mit7b1kwset"]
 
-[ext_resource type="Script" uid="uid://jnpkeham3fwt" path="res://scripts/light_probe.gd" id="1_yyahe"]
-[ext_resource type="Shader" uid="uid://d01m3e7lsksme" path="res://shaders/SH_test.gdshader" id="2_krxcp"]
+[ext_resource type="Script" uid="uid://jnpkeham3fwt" path="res://MyProbesPackage/scripts/light_probe.gd" id="1_yyahe"]
+[ext_resource type="Shader" uid="uid://d01m3e7lsksme" path="res://MyProbesPackage/shaders/SH_test.gdshader" id="2_krxcp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qh0vq"]
 render_priority = 0
