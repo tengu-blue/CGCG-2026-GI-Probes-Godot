@@ -1503,47 +1503,47 @@ blend_shapes/hooves = 0.0
 
 [node name="MaterialAdapter" parent="Horse2" unique_id=375072625 instance=ExtResource("10_tghkc")]
 
-[node name="LeftWall-RED2" type="MeshInstance3D" parent="." unique_id=921894770]
+[node name="Wall-RED" type="MeshInstance3D" parent="." unique_id=921894770]
 transform = Transform3D(9.553427e-16, -2.1855694e-08, -1, -0.5, -2.1855694e-08, 0, -2.1855694e-08, 0.5, -4.371139e-08, -8.940697, 1.25, -3.4179916)
 gi_mode = 0
 mesh = SubResource("QuadMesh_e7bdr")
 
-[node name="MaterialAdapter" parent="LeftWall-RED2" unique_id=393358447 instance=ExtResource("10_tghkc")]
+[node name="MaterialAdapter" parent="Wall-RED" unique_id=393358447 instance=ExtResource("10_tghkc")]
 
-[node name="LeftWall-BLUE2" type="MeshInstance3D" parent="." unique_id=1576042662]
+[node name="Wall-BLUE" type="MeshInstance3D" parent="." unique_id=1576042662]
 transform = Transform3D(9.553427e-16, -2.1855694e-08, -1, -0.5, -2.1855694e-08, 0, -2.1855694e-08, 0.5, -4.371139e-08, -8.940697, 1.75, -3.4179916)
 gi_mode = 0
 mesh = SubResource("QuadMesh_5k1ak")
 
-[node name="MaterialAdapter" parent="LeftWall-BLUE2" unique_id=1838081532 instance=ExtResource("10_tghkc")]
+[node name="MaterialAdapter" parent="Wall-BLUE" unique_id=1838081532 instance=ExtResource("10_tghkc")]
 
-[node name="LeftWall-YELLOW2" type="MeshInstance3D" parent="." unique_id=1071237519]
+[node name="Wall-YELLOW" type="MeshInstance3D" parent="." unique_id=1071237519]
 transform = Transform3D(-2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 0, 0, 1, -8.638859, 1.25, -3.6998444)
 gi_mode = 0
 mesh = SubResource("QuadMesh_snmpp")
 
-[node name="MaterialAdapter" parent="LeftWall-YELLOW2" unique_id=644281388 instance=ExtResource("10_tghkc")]
+[node name="MaterialAdapter" parent="Wall-YELLOW" unique_id=644281388 instance=ExtResource("10_tghkc")]
 
-[node name="LeftWall-PINK2" type="MeshInstance3D" parent="." unique_id=152659183]
+[node name="Wall-PINK" type="MeshInstance3D" parent="." unique_id=152659183]
 transform = Transform3D(-2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 0, 0, 1, -8.638859, 1.75, -3.6998444)
 gi_mode = 0
 mesh = SubResource("QuadMesh_jpmcy")
 
-[node name="MaterialAdapter" parent="LeftWall-PINK2" unique_id=1244539591 instance=ExtResource("10_tghkc")]
+[node name="MaterialAdapter" parent="Wall-PINK" unique_id=1244539591 instance=ExtResource("10_tghkc")]
 
-[node name="BackWall-WHITE2" type="MeshInstance3D" parent="." unique_id=424738253]
+[node name="Wall-ORANGE" type="MeshInstance3D" parent="." unique_id=424738253]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.3579974, 1.5, -3.4749417)
 gi_mode = 0
 mesh = SubResource("QuadMesh_3o7ht")
 
-[node name="MaterialAdapter" parent="BackWall-WHITE2" unique_id=1897497455 instance=ExtResource("10_tghkc")]
+[node name="MaterialAdapter" parent="Wall-ORANGE" unique_id=1897497455 instance=ExtResource("10_tghkc")]
 
-[node name="BackWall-WHITE3" type="MeshInstance3D" parent="." unique_id=1840859691]
+[node name="Wall-CYAN" type="MeshInstance3D" parent="." unique_id=1840859691]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.917366, 1.5, -3.9248438)
 gi_mode = 0
 mesh = SubResource("QuadMesh_vx4c8")
 
-[node name="MaterialAdapter" parent="BackWall-WHITE3" unique_id=523160725 instance=ExtResource("10_tghkc")]
+[node name="MaterialAdapter" parent="Wall-CYAN" unique_id=523160725 instance=ExtResource("10_tghkc")]
 
 [node name="LightProbe20" parent="." unique_id=373854985 instance=ExtResource("4_vgrjl")]
 transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -8.836363, 1.2475928, -3.3697636)
