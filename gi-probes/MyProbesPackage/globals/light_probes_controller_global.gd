@@ -28,7 +28,7 @@ func update_probes():
 	
 	# compute the harmonics for each probes
 	for probe in probes:
-		var sh = await prober.capture(probe.global_position, probe.min_dist)
+		var sh = await prober.capture(probe.global_position, probe.min_dist())
 		sh_harmonics.push_back(sh)
 	
 		# debug test

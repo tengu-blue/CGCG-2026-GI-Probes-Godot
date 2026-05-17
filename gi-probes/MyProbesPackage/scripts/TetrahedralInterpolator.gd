@@ -60,7 +60,7 @@ func query(p: Vector3) -> Array[Vector3]:
 		return _nearest(p)
 
 	var bary := _barycentric(p, tet)
-	if bary == null:
+	if bary[0] == null:
 		return _nearest(p)
 
 	var result: Array[Vector3] = []
