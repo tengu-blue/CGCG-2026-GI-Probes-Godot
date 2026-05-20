@@ -1031,12 +1031,197 @@ material = SubResource("ShaderMaterial_8v0ro")
 subdivide_width = 2
 subdivide_depth = 2
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bjylu"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(1, 0, 0, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_bouyg"]
+material = SubResource("ShaderMaterial_bjylu")
+subdivide_width = 2
+subdivide_depth = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_al4h0"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(0, 0.5413376, 0.95019263, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tfuro"]
+material = SubResource("ShaderMaterial_al4h0")
+subdivide_width = 2
+subdivide_depth = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bxcaw"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(0.8117647, 0.8901961, 0, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_uy2xj"]
+material = SubResource("ShaderMaterial_bxcaw")
+subdivide_width = 2
+subdivide_depth = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bu47h"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(0.9999998, 0.18290052, 0.56273913, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_rj7i8"]
+material = SubResource("ShaderMaterial_bu47h")
+subdivide_width = 2
+subdivide_depth = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6dht0"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(2.3102762e-06, 0.75824946, 0.76348007, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_mbxgv"]
+material = SubResource("ShaderMaterial_6dht0")
+subdivide_width = 2
+subdivide_depth = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_75vub"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(0.79266375, 0.6883864, 0.61652666, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_spx6i"]
+material = SubResource("ShaderMaterial_75vub")
+subdivide_width = 2
+subdivide_depth = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g5lb6"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(4.5242905e-06, 0.98782927, 0.58543694, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_qoyhh"]
+material = SubResource("ShaderMaterial_g5lb6")
+subdivide_width = 2
+subdivide_depth = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sr5m2"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(0.7034793, 0.39509916, 1, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_bviu3"]
+material = SubResource("ShaderMaterial_sr5m2")
+subdivide_width = 2
+subdivide_depth = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_31u0c"]
+render_priority = 0
+shader = SubResource("Shader_21d78")
+shader_parameter/albedo_color = Color(0.29066864, 0.8740329, 0.21287695, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_7c4tj"]
+material = SubResource("ShaderMaterial_31u0c")
+subdivide_width = 2
+subdivide_depth = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4b1to"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
+shader_parameter/use_custom = true
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_iwth4"]
+material = SubResource("ShaderMaterial_4b1to")
+subdivide_width = 4
+subdivide_depth = 4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mipxs"]
+render_priority = 0
+shader = SubResource("Shader_vwvft")
+shader_parameter/albedo_color = Color(0.13333334, 0.14117648, 0.9372549, 1)
+shader_parameter/roughness_scalar = 1.0
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ndtpm"]
+material = SubResource("ShaderMaterial_mipxs")
+subdivide_width = 2
+subdivide_depth = 2
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tu41q"]
 render_priority = 0
 shader = ExtResource("4_3keet")
-shader_parameter/albedo_color = Color(0.8596104, 0.6263384, 0.24938852, 1)
+shader_parameter/albedo_color = Color(0.96390635, 0.7668228, 0.47494906, 1)
 shader_parameter/albedo_texture = ExtResource("9_tghkc")
-shader_parameter/roughness_scalar = 0.3070000145825
+shader_parameter/roughness_scalar = 0.9070000430825
 shader_parameter/roughness_texture = ExtResource("11_21d78")
 shader_parameter/metallic_scalar = 1.0
 shader_parameter/normal_texture = ExtResource("10_vwvft")
@@ -1173,6 +1358,21 @@ shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 
 [sub_resource type="SphereMesh" id="SphereMesh_0213m"]
 material = SubResource("ShaderMaterial_kf4yx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uy2xj"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(0.95304054, 0.9530404, 0.95304054, 1)
+shader_parameter/roughness_scalar = 0.0190000009025
+shader_parameter/metallic_scalar = 1.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = true
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_bu47h"]
+material = SubResource("ShaderMaterial_uy2xj")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nb71s"]
 render_priority = 0
@@ -1503,7 +1703,7 @@ mesh = SubResource("BoxMesh_c7ykc")
 [node name="MaterialAdapter" parent="Box_ObjectOnly/TallBlock" unique_id=662923300 instance=ExtResource("10_tghkc")]
 
 [node name="DirectionLightBlocker" type="MeshInstance3D" parent="Box_ObjectOnly" unique_id=2128858028]
-transform = Transform3D(4.125716, -4.879425, -2.7535074, -1.0106101, 9.097191, -3.7261863, 3.299054, 8.8888645, 2.3020146, -4.900119, 0.9117303, 5.26887)
+transform = Transform3D(4.125716, -4.879425, -2.7535074, -1.0106101, 9.097191, -3.7261863, 3.299054, 8.8888645, 2.3020146, -4.900119, 1.634345, 5.797337)
 mesh = SubResource("PlaneMesh_vwvft")
 
 [node name="Box_ObjectOnly2" type="Node3D" parent="." unique_id=1458378436]
@@ -1560,24 +1760,78 @@ transform = Transform3D(0.046027325, 0, 0.09437417, 0, 0.105, 0, -0.09437417, 0,
 transform = Transform3D(0.09205465, 0, 0.18874834, 0, 0.21, 0, -0.18874834, 0, 0.09205465, 0.25745773, 1.1405137, 2.7913532)
 
 [node name="LightProbe10" parent="Box_ObjectOnly2" unique_id=1111619213 instance=ExtResource("4_vgrjl")]
-transform = Transform3D(0.09205465, 0, 0.18874834, 0, 0.21, 0, -0.18874834, 0, 0.09205465, 0.30715942, 1.1405137, 3.1569395)
+transform = Transform3D(0.09205465, 0, 0.18874834, 0, 0.21, 0, -0.18874834, 0, 0.09205465, -0.0032234192, 1.3611284, 2.9877253)
+show_debug = true
 
 [node name="LightProbe7" parent="Box_ObjectOnly2" unique_id=1525372376 instance=ExtResource("4_vgrjl")]
 transform = Transform3D(0.041643772, 0, 0.08538616, 0, 0.095, 0, -0.08538616, 0, 0.041643772, -0.25873852, 1.1433425, 2.728139)
 
-[node name="SmallBlock" type="MeshInstance3D" parent="Box_ObjectOnly2" unique_id=1121413074]
-transform = Transform3D(0.22812472, 0.1022698, 4.4703548e-09, 0, -1.0927847e-08, 0.25, 0.1022698, -0.22812472, -9.971648e-09, 0.27290535, 1.1316025, 2.7874794)
-layers = 2
-mesh = SubResource("BoxMesh_7tflp")
+[node name="OmniLight3D2" type="OmniLight3D" parent="Box_ObjectOnly2" unique_id=1822664578]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9507952, 3.033268)
+omni_range = 2.5257335
 
-[node name="MaterialAdapter" parent="Box_ObjectOnly2/SmallBlock" unique_id=215292673 instance=ExtResource("10_tghkc")]
+[node name="Box_ObjectOnly3" type="Node3D" parent="." unique_id=762308248]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.898851, 0, 4.278846)
 
-[node name="TallBlock" type="MeshInstance3D" parent="Box_ObjectOnly2" unique_id=399732227]
-transform = Transform3D(0.21660446, -0.12482992, -1.4514261e-08, 0, -1.0927847e-08, 0.665, -0.12482992, -0.21660446, -2.5185097e-08, 0.007939339, 1.3419521, 3.1850462)
-layers = 2
-mesh = SubResource("BoxMesh_c7ykc")
+[node name="LeftWall-RED" type="MeshInstance3D" parent="Box_ObjectOnly3" unique_id=888026228]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 1.5, 3.5)
+gi_mode = 0
+mesh = SubResource("QuadMesh_kf4yx")
 
-[node name="MaterialAdapter" parent="Box_ObjectOnly2/TallBlock" unique_id=1817730913 instance=ExtResource("10_tghkc")]
+[node name="MaterialAdapter" parent="Box_ObjectOnly3/LeftWall-RED" unique_id=374304857 instance=ExtResource("10_tghkc")]
+
+[node name="RightWall-GREEN" type="MeshInstance3D" parent="Box_ObjectOnly3" unique_id=464613186]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 1.5, 2.5)
+gi_mode = 0
+mesh = SubResource("QuadMesh_ighnv")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly3/RightWall-GREEN" unique_id=1382163433 instance=ExtResource("10_tghkc")]
+
+[node name="BottomWall-WHITE" type="MeshInstance3D" parent="Box_ObjectOnly3" unique_id=459218825]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 1, 3)
+gi_mode = 0
+mesh = SubResource("QuadMesh_bjylu")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly3/BottomWall-WHITE" unique_id=965325581 instance=ExtResource("10_tghkc")]
+
+[node name="BackWall-WHITE" type="MeshInstance3D" parent="Box_ObjectOnly3" unique_id=1529107825]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5, 1.5, 3)
+gi_mode = 0
+mesh = SubResource("QuadMesh_al4h0")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly3/BackWall-WHITE" unique_id=902989721 instance=ExtResource("10_tghkc")]
+
+[node name="TopWall-WHITE" type="MeshInstance3D" parent="Box_ObjectOnly3" unique_id=1374619724]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 2, 3)
+gi_mode = 0
+mesh = SubResource("QuadMesh_bxcaw")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly3/TopWall-WHITE" unique_id=1797788880 instance=ExtResource("10_tghkc")]
+
+[node name="LightProbe8" parent="Box_ObjectOnly3" unique_id=411351002 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, 0.36996078, 1.0672687, 3.4005718)
+
+[node name="LightProbe4" parent="Box_ObjectOnly3" unique_id=261434073 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.0876711, 0, 0.17976034, 0, 0.2, 0, -0.17976034, 0, 0.0876711, 0.011518478, 1.1597124, 3.1707153)
+
+[node name="LightProbe5" parent="Box_ObjectOnly3" unique_id=1654511019 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.096438214, 0, 0.19773637, 0, 0.22, 0, -0.19773637, 0, 0.096438214, 0.014253616, 1.5929059, 3.1785994)
+
+[node name="LightProbe9" parent="Box_ObjectOnly3" unique_id=1894619090 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.046027325, 0, 0.09437417, 0, 0.105, 0, -0.09437417, 0, 0.046027325, -0.36565685, 1.1070424, 3.342702)
+
+[node name="LightProbe6" parent="Box_ObjectOnly3" unique_id=229115765 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.09205465, 0, 0.18874834, 0, 0.21, 0, -0.18874834, 0, 0.09205465, 0.25745773, 1.1405137, 2.7913532)
+
+[node name="LightProbe10" parent="Box_ObjectOnly3" unique_id=371696486 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.09205465, 0, 0.18874834, 0, 0.21, 0, -0.18874834, 0, 0.09205465, -0.0032234192, 1.3611284, 2.9877253)
+
+[node name="LightProbe7" parent="Box_ObjectOnly3" unique_id=1948274241 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.041643772, 0, 0.08538616, 0, 0.095, 0, -0.08538616, 0, 0.041643772, -0.25873852, 1.1433425, 2.728139)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Box_ObjectOnly3" unique_id=549055438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9507952, 3.033268)
+omni_range = 2.5257335
 
 [node name="Box_ObjectOnly_Moving" type="Node3D" parent="." unique_id=233172732]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.898851, 0, -4.047799)
@@ -1711,6 +1965,138 @@ script = ExtResource("7_7tflp")
 
 [node name="MaterialAdapter" parent="Box_ObjectOnly_Moving/Node3D/SmallBlock" unique_id=1004671342 instance=ExtResource("10_tghkc")]
 
+[node name="Box_ObjectOnly_Moving2" type="Node3D" parent="." unique_id=646525206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.898851, 1.2481594, -4.047799)
+
+[node name="LeftWall-RED" type="MeshInstance3D" parent="Box_ObjectOnly_Moving2" unique_id=412078221]
+transform = Transform3D(-2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 0, 0, 1, 0.25, 1.25, 3.5)
+gi_mode = 0
+mesh = SubResource("QuadMesh_bouyg")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly_Moving2/LeftWall-RED" unique_id=1308515720 instance=ExtResource("10_tghkc")]
+
+[node name="LeftWall-BLUE" type="MeshInstance3D" parent="Box_ObjectOnly_Moving2" unique_id=1067729862]
+transform = Transform3D(-2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 0, 0, 1, 0.25, 1.75, 3.5)
+gi_mode = 0
+mesh = SubResource("QuadMesh_tfuro")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly_Moving2/LeftWall-BLUE" unique_id=720826195 instance=ExtResource("10_tghkc")]
+
+[node name="LeftWall-YELLOW" type="MeshInstance3D" parent="Box_ObjectOnly_Moving2" unique_id=440230732]
+transform = Transform3D(-2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 0, 0, 1, -0.25, 1.25, 3.5)
+gi_mode = 0
+mesh = SubResource("QuadMesh_uy2xj")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly_Moving2/LeftWall-YELLOW" unique_id=809126384 instance=ExtResource("10_tghkc")]
+
+[node name="LeftWall-PINK" type="MeshInstance3D" parent="Box_ObjectOnly_Moving2" unique_id=31745947]
+transform = Transform3D(-2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 0, 0, 1, -0.25, 1.75, 3.5)
+gi_mode = 0
+mesh = SubResource("QuadMesh_rj7i8")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly_Moving2/LeftWall-PINK" unique_id=832483062 instance=ExtResource("10_tghkc")]
+
+[node name="RightWall-BLUE" type="MeshInstance3D" parent="Box_ObjectOnly_Moving2" unique_id=725835383]
+transform = Transform3D(-2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 0, 0, 1, 0.25, 1.25, 2.5)
+gi_mode = 0
+mesh = SubResource("QuadMesh_mbxgv")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly_Moving2/RightWall-BLUE" unique_id=1497386998 instance=ExtResource("10_tghkc")]
+
+[node name="RightWall-BEIGE" type="MeshInstance3D" parent="Box_ObjectOnly_Moving2" unique_id=719358457]
+transform = Transform3D(-2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 0, 0, 1, 0.25, 1.75, 2.5)
+gi_mode = 0
+mesh = SubResource("QuadMesh_spx6i")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly_Moving2/RightWall-BEIGE" unique_id=1744935109 instance=ExtResource("10_tghkc")]
+
+[node name="RightWall-GREEN" type="MeshInstance3D" parent="Box_ObjectOnly_Moving2" unique_id=1865342699]
+transform = Transform3D(-2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 0, 0, 1, -0.25, 1.25, 2.5)
+gi_mode = 0
+mesh = SubResource("QuadMesh_qoyhh")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly_Moving2/RightWall-GREEN" unique_id=1359940544 instance=ExtResource("10_tghkc")]
+
+[node name="RightWall-PURPLE" type="MeshInstance3D" parent="Box_ObjectOnly_Moving2" unique_id=1072620032]
+transform = Transform3D(-2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 0, 0, 1, -0.25, 1.75, 2.5)
+gi_mode = 0
+mesh = SubResource("QuadMesh_bviu3")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly_Moving2/RightWall-PURPLE" unique_id=447315396 instance=ExtResource("10_tghkc")]
+
+[node name="BottomWall-WHITE" type="MeshInstance3D" parent="Box_ObjectOnly_Moving2" unique_id=866215068]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 1, 3)
+gi_mode = 0
+mesh = SubResource("QuadMesh_7c4tj")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly_Moving2/BottomWall-WHITE" unique_id=1767943860 instance=ExtResource("10_tghkc")]
+
+[node name="BackWall-WHITE" type="MeshInstance3D" parent="Box_ObjectOnly_Moving2" unique_id=1066239763]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5, 1.5, 3)
+gi_mode = 0
+mesh = SubResource("QuadMesh_iwth4")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly_Moving2/BackWall-WHITE" unique_id=569420193 instance=ExtResource("10_tghkc")]
+
+[node name="TopWall-WHITE" type="MeshInstance3D" parent="Box_ObjectOnly_Moving2" unique_id=1429860758]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 2, 3)
+gi_mode = 0
+mesh = SubResource("QuadMesh_ndtpm")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly_Moving2/TopWall-WHITE" unique_id=25819963 instance=ExtResource("10_tghkc")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Box_ObjectOnly_Moving2" unique_id=2146403716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9507952, 3)
+omni_range = 2.5257335
+
+[node name="LightProbe8" parent="Box_ObjectOnly_Moving2" unique_id=1338727229 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, 0.33949375, 1.1207877, 3.3724637)
+show_debug = true
+
+[node name="LightProbe9" parent="Box_ObjectOnly_Moving2" unique_id=1852355349 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -0.3910694, 1.1207877, 3.3724637)
+show_debug = true
+
+[node name="LightProbe10" parent="Box_ObjectOnly_Moving2" unique_id=301994226 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, 0.33949375, 1.8819816, 3.3724637)
+show_debug = true
+
+[node name="LightProbe11" parent="Box_ObjectOnly_Moving2" unique_id=831928769 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -0.3910694, 1.8819816, 3.3724637)
+show_debug = true
+
+[node name="LightProbe12" parent="Box_ObjectOnly_Moving2" unique_id=145178106 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, 0.33949375, 1.1207877, 2.6145232)
+show_debug = true
+
+[node name="LightProbe13" parent="Box_ObjectOnly_Moving2" unique_id=584255120 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -0.3910694, 1.1207877, 2.6145232)
+show_debug = true
+
+[node name="LightProbe14" parent="Box_ObjectOnly_Moving2" unique_id=1666171655 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, 0.33949375, 1.8819816, 2.6145232)
+show_debug = true
+
+[node name="LightProbe15" parent="Box_ObjectOnly_Moving2" unique_id=1225598890 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -0.3910694, 1.8819816, 2.6145232)
+show_debug = true
+
+[node name="LightProbe16" parent="Box_ObjectOnly_Moving2" unique_id=1310721602 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, 0.33949375, 1.1207877, 2.9683435)
+show_debug = true
+
+[node name="LightProbe17" parent="Box_ObjectOnly_Moving2" unique_id=2142980692 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -0.3910694, 1.1207877, 2.9683435)
+show_debug = true
+
+[node name="LightProbe18" parent="Box_ObjectOnly_Moving2" unique_id=676959161 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, 0.33949375, 1.8819816, 2.9683435)
+show_debug = true
+
+[node name="LightProbe19" parent="Box_ObjectOnly_Moving2" unique_id=996517376 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -0.3910694, 1.8819816, 2.9683435)
+show_debug = true
+
 [node name="Horse" type="MeshInstance3D" parent="." unique_id=1790103201]
 transform = Transform3D(-1.9686875, 0, 3.0438287, 0, 3.625, 0, -3.0438287, 0, -1.9686875, -6.697276, 1.0937647, -3.3275306)
 layers = 2
@@ -1740,6 +2126,14 @@ gi_mode = 0
 mesh = SubResource("SphereMesh_0213m")
 
 [node name="MaterialAdapter" parent="Ball" unique_id=1344265230 instance=ExtResource("10_tghkc")]
+
+[node name="Ball2" type="MeshInstance3D" parent="." unique_id=2081956603]
+transform = Transform3D(-1.0011168e-08, 0.22902884, -0.38037062, -0.444, -1.9407857e-08, 0, -1.6626528e-08, 0.38037062, 0.22902884, -8.84021, 1.3635831, 7.2791405)
+layers = 2
+gi_mode = 0
+mesh = SubResource("SphereMesh_bu47h")
+
+[node name="MaterialAdapter" parent="Ball2" unique_id=1724111840 instance=ExtResource("10_tghkc")]
 
 [node name="Wall-BLUE" type="MeshInstance3D" parent="." unique_id=1576042662]
 transform = Transform3D(9.553427e-16, -2.1855694e-08, -1, -0.5, -2.1855694e-08, 0, -2.1855694e-08, 0.5, -4.371139e-08, -8.940697, 1.75, -3.4179916)

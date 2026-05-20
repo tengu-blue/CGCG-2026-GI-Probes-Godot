@@ -32,7 +32,8 @@ func update_probes():
 		sh_harmonics.push_back(sh)
 	
 		# debug test
-		# probe.debug_set(sh)
+		if(probe.show_debug):
+			probe.debug_set(sh)
 	
 	# store the harmonics and positions
 	var positions: Array[Vector3] = []

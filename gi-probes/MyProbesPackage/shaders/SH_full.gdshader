@@ -38,12 +38,13 @@ uniform bool use_sh;
 uniform vec3 sh[9];
 
 
+// Godot's axes are mixed...
 vec3 evaluate_sh(vec3 n) {
  	float x = -n.x;
  	float y = -n.z;
  	float z = n.y;
 
-float basis[9];
+	float basis[9];
 
  	basis[0] = 0.282095;
  	basis[1] = 0.488603 * y;
@@ -56,7 +57,8 @@ float basis[9];
  	basis[8] = 0.546274 * (x * x - y * y);
 
  	vec3 result = vec3(0.0);
-
+	
+	// per vertex vs uniform
 	if(!use_custom) {
 	 	for (int i = 0; i < 9; i++) {
 	 	 	result += sh[i] * basis[i];
@@ -125,12 +127,20 @@ void fragment() {
 	#ifdef EDITOR_HINT
  	vec3 irradiance = vec3(1.0);
 	#else
-	 	vec3 irradiance = evaluate_sh(normalize((INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz));
+		vec3 n = normalize((INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
+	
+	 	vec3 irradiance = evaluate_sh(n);
 	#endif
 	   
  	if(use_sh) {
 		
-		EMISSION = irradiance * albedo * (1.0 - metallic);
+		vec3 indirect_diffuse = 
+			  irradiance
+			* albedo
+			* (1.0 - metallic);
+		
+		// Hack that kinda looks best...
+		EMISSION = indirect_diffuse;
 		// ALBEDO *= irradiance;
 	}
 	
@@ -193,7 +203,6 @@ void light() {
  	 	float denominator = max(4.0 * NdotV * NdotL, 0.0001);
 
  	 	vec3 specular = numerator / denominator;
-
 
  	 	vec3 kD = vec3(1.0) * (1.0 - metallic);
  	 	vec3 diffuse = kD * albedo / PI;
