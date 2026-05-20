@@ -1,6 +1,9 @@
 shader_type spatial;
 
-render_mode blend_mix, specular_disabled, cull_disabled;
+render_mode blend_mix, 
+			specular_disabled, 
+			cull_disabled;
+			//ambient_light_disabled;
 
 // Textures / Color
 
@@ -15,6 +18,9 @@ uniform sampler2D metallic_texture;
 
 uniform sampler2D normal_texture : hint_normal;
 uniform float normal_scale : hint_range(0.0, 4.0) = 1.0;
+
+uniform samplerCube env_map;
+uniform bool use_env = false;
 
 // Harmonics
 
@@ -122,8 +128,33 @@ void fragment() {
 	 	vec3 irradiance = evaluate_sh(normalize((INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz));
 	#endif
 	   
- 	if(use_sh)
-		ALBEDO *= irradiance;
+ 	if(use_sh) {
+		
+		EMISSION = irradiance * albedo * (1.0 - metallic);
+		// ALBEDO *= irradiance;
+	}
+	
+	if(use_sh && use_env) {
+		vec3 N = normalize((INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
+	 	vec3 V = normalize((INV_VIEW_MATRIX * vec4(VIEW, 0.0)).xyz);
+	 	
+		vec3 F0 = mix(vec3(0.4), albedo, metallic);
+		float dotNV = max(dot(N, V), 0.0);
+ 	 	vec3 F = fresnel_schlick(dotNV, F0);
+		
+		vec3 R = reflect(V, N);
+		
+		vec3 env =
+		    textureLod(
+		        env_map,
+		        R,
+		        roughness * 5.0
+		    ).rgb;
+		
+		vec3 specularIBL = env * F;
+		
+		EMISSION += specularIBL;
+	}
 }
 
 

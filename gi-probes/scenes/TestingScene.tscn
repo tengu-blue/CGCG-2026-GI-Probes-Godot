@@ -15,10 +15,11 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_af6wp"]
 render_priority = 0
 shader = ExtResource("4_3keet")
-shader_parameter/albedo_color = Color(0.6693154, 0.6693154, 0.6693154, 1)
-shader_parameter/roughness_scalar = 0.6190000294025
+shader_parameter/albedo_color = Color(0.6556008, 0.6556009, 0.6556008, 1)
+shader_parameter/roughness_scalar = 1.0
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -33,6 +34,7 @@ shader_parameter/albedo_color = Color(1, 0, 0, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = true
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -49,6 +51,7 @@ shader_parameter/albedo_color = Color(0, 0.8392157, 0, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = true
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -261,6 +264,7 @@ shader_parameter/albedo_color = Color(1, 1, 1, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = true
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -473,6 +477,7 @@ shader_parameter/albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = true
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -490,6 +495,7 @@ shader_parameter/albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = true
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -507,6 +513,7 @@ shader_parameter/albedo_color = Color(1, 0, 0, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = true
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -523,6 +530,7 @@ shader_parameter/albedo_color = Color(0, 0.5455193, 0.9358626, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = true
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -539,6 +547,7 @@ shader_parameter/albedo_color = Color(0, 0.8392157, 0, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = true
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -571,6 +580,7 @@ shader_parameter/albedo_color = Color(1, 1, 1, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = true
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -603,6 +613,7 @@ shader_parameter/albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = true
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -620,6 +631,7 @@ shader_parameter/albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = true
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -637,6 +649,7 @@ shader_parameter/albedo_color = Color(1, 0, 0, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -653,6 +666,7 @@ shader_parameter/albedo_color = Color(0, 0.8392157, 0, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -685,6 +699,7 @@ shader_parameter/albedo_color = Color(1, 1, 1, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -717,6 +732,7 @@ shader_parameter/albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -734,6 +750,7 @@ shader_parameter/albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -746,6 +763,89 @@ subdivide_depth = 4
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vwvft"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vx4c8"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(1, 0, 0, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_kf4yx"]
+material = SubResource("ShaderMaterial_vx4c8")
+subdivide_width = 2
+subdivide_depth = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0213m"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(0, 0.8392157, 0, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ighnv"]
+material = SubResource("ShaderMaterial_0213m")
+subdivide_width = 2
+subdivide_depth = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q2qp2"]
+render_priority = 0
+shader = SubResource("Shader_21d78")
+shader_parameter/albedo_color = Color(0.85750073, 0.85750073, 0.85750073, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_bjylu"]
+material = SubResource("ShaderMaterial_q2qp2")
+subdivide_width = 2
+subdivide_depth = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bouyg"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_al4h0"]
+material = SubResource("ShaderMaterial_bouyg")
+subdivide_width = 2
+subdivide_depth = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tfuro"]
+render_priority = 0
+shader = SubResource("Shader_vwvft")
+shader_parameter/albedo_color = Color(0.9355364, 0.9355364, 0.93553627, 1)
+shader_parameter/roughness_scalar = 1.0
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_bxcaw"]
+material = SubResource("ShaderMaterial_tfuro")
+subdivide_width = 2
+subdivide_depth = 2
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gv1pu"]
 render_priority = 0
 shader = ExtResource("4_3keet")
@@ -753,6 +853,7 @@ shader_parameter/albedo_color = Color(1, 0, 0, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -769,6 +870,7 @@ shader_parameter/albedo_color = Color(0, 0.5413376, 0.95019263, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -785,6 +887,7 @@ shader_parameter/albedo_color = Color(0.8117647, 0.8901961, 0, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -801,6 +904,7 @@ shader_parameter/albedo_color = Color(0.9999998, 0.18290052, 0.56273913, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -817,6 +921,7 @@ shader_parameter/albedo_color = Color(2.3102762e-06, 0.75824946, 0.76348007, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -833,6 +938,7 @@ shader_parameter/albedo_color = Color(0.79266375, 0.6883864, 0.61652666, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -849,6 +955,7 @@ shader_parameter/albedo_color = Color(4.5242905e-06, 0.98782927, 0.58543694, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -865,6 +972,7 @@ shader_parameter/albedo_color = Color(0.7034793, 0.39509916, 1, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -897,6 +1005,7 @@ shader_parameter/albedo_color = Color(1, 1, 1, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = true
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -925,13 +1034,14 @@ subdivide_depth = 2
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tu41q"]
 render_priority = 0
 shader = ExtResource("4_3keet")
-shader_parameter/albedo_color = Color(0.73300546, 0.7330054, 0.7330054, 1)
+shader_parameter/albedo_color = Color(0.8596104, 0.6263384, 0.24938852, 1)
 shader_parameter/albedo_texture = ExtResource("9_tghkc")
-shader_parameter/roughness_scalar = 1.0
+shader_parameter/roughness_scalar = 0.3070000145825
 shader_parameter/roughness_texture = ExtResource("11_21d78")
-shader_parameter/metallic_scalar = 0.68400003249
+shader_parameter/metallic_scalar = 1.0
 shader_parameter/normal_texture = ExtResource("10_vwvft")
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = true
 shader_parameter/use_custom = true
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -946,6 +1056,7 @@ shader_parameter/roughness_texture = ExtResource("11_21d78")
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_texture = ExtResource("10_vwvft")
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -994,6 +1105,7 @@ shader_parameter/roughness_texture = ExtResource("11_21d78")
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_texture = ExtResource("10_vwvft")
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -1008,6 +1120,7 @@ shader_parameter/roughness_texture = ExtResource("11_21d78")
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_texture = ExtResource("10_vwvft")
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = true
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -1046,6 +1159,21 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kf4yx"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(0.61474454, 0.6147446, 0.61474454, 1)
+shader_parameter/roughness_scalar = 0.0530000025175
+shader_parameter/metallic_scalar = 0.930000044175
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = true
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_0213m"]
+material = SubResource("ShaderMaterial_kf4yx")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nb71s"]
 render_priority = 0
 shader = ExtResource("4_3keet")
@@ -1053,6 +1181,7 @@ shader_parameter/albedo_color = Color(0.9999998, 0.18290052, 0.56273913, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -1069,6 +1198,7 @@ shader_parameter/albedo_color = Color(1, 0.70980394, 0.03529412, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -1085,12 +1215,30 @@ shader_parameter/albedo_color = Color(0, 0.87468386, 0.9129036, 1)
 shader_parameter/roughness_scalar = 0.5
 shader_parameter/metallic_scalar = 0.0
 shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
 shader_parameter/use_custom = false
 shader_parameter/use_sh = false
 shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
 [sub_resource type="QuadMesh" id="QuadMesh_vx4c8"]
 material = SubResource("ShaderMaterial_3o7ht")
+subdivide_width = 4
+subdivide_depth = 4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ighnv"]
+render_priority = 0
+shader = ExtResource("4_3keet")
+shader_parameter/albedo_color = Color(0, 0.87468386, 0.9129036, 1)
+shader_parameter/roughness_scalar = 0.5
+shader_parameter/metallic_scalar = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/use_env = false
+shader_parameter/use_custom = false
+shader_parameter/use_sh = false
+shader_parameter/sh = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_q2qp2"]
+material = SubResource("ShaderMaterial_ighnv")
 subdivide_width = 4
 subdivide_depth = 4
 
@@ -1358,6 +1506,79 @@ mesh = SubResource("BoxMesh_c7ykc")
 transform = Transform3D(4.125716, -4.879425, -2.7535074, -1.0106101, 9.097191, -3.7261863, 3.299054, 8.8888645, 2.3020146, -4.900119, 0.9117303, 5.26887)
 mesh = SubResource("PlaneMesh_vwvft")
 
+[node name="Box_ObjectOnly2" type="Node3D" parent="." unique_id=1458378436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.898851, 0, 2.8059301)
+
+[node name="LeftWall-RED" type="MeshInstance3D" parent="Box_ObjectOnly2" unique_id=1111266532]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 1.5, 3.5)
+gi_mode = 0
+mesh = SubResource("QuadMesh_kf4yx")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly2/LeftWall-RED" unique_id=847979763 instance=ExtResource("10_tghkc")]
+
+[node name="RightWall-GREEN" type="MeshInstance3D" parent="Box_ObjectOnly2" unique_id=1355300551]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 1.5, 2.5)
+gi_mode = 0
+mesh = SubResource("QuadMesh_ighnv")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly2/RightWall-GREEN" unique_id=948396343 instance=ExtResource("10_tghkc")]
+
+[node name="BottomWall-WHITE" type="MeshInstance3D" parent="Box_ObjectOnly2" unique_id=815933436]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 1, 3)
+gi_mode = 0
+mesh = SubResource("QuadMesh_bjylu")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly2/BottomWall-WHITE" unique_id=1151782734 instance=ExtResource("10_tghkc")]
+
+[node name="BackWall-WHITE" type="MeshInstance3D" parent="Box_ObjectOnly2" unique_id=723424838]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5, 1.5, 3)
+gi_mode = 0
+mesh = SubResource("QuadMesh_al4h0")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly2/BackWall-WHITE" unique_id=440768785 instance=ExtResource("10_tghkc")]
+
+[node name="TopWall-WHITE" type="MeshInstance3D" parent="Box_ObjectOnly2" unique_id=554614811]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 2, 3)
+gi_mode = 0
+mesh = SubResource("QuadMesh_bxcaw")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly2/TopWall-WHITE" unique_id=939014997 instance=ExtResource("10_tghkc")]
+
+[node name="LightProbe8" parent="Box_ObjectOnly2" unique_id=611803862 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, 0.36996078, 1.0672687, 3.4005718)
+
+[node name="LightProbe4" parent="Box_ObjectOnly2" unique_id=1388281097 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.0876711, 0, 0.17976034, 0, 0.2, 0, -0.17976034, 0, 0.0876711, 0.011518478, 1.1597124, 3.1707153)
+
+[node name="LightProbe5" parent="Box_ObjectOnly2" unique_id=1566652482 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.096438214, 0, 0.19773637, 0, 0.22, 0, -0.19773637, 0, 0.096438214, 0.014253616, 1.5929059, 3.1785994)
+
+[node name="LightProbe9" parent="Box_ObjectOnly2" unique_id=1599452273 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.046027325, 0, 0.09437417, 0, 0.105, 0, -0.09437417, 0, 0.046027325, -0.36565685, 1.1070424, 3.342702)
+
+[node name="LightProbe6" parent="Box_ObjectOnly2" unique_id=1942226159 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.09205465, 0, 0.18874834, 0, 0.21, 0, -0.18874834, 0, 0.09205465, 0.25745773, 1.1405137, 2.7913532)
+
+[node name="LightProbe10" parent="Box_ObjectOnly2" unique_id=1111619213 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.09205465, 0, 0.18874834, 0, 0.21, 0, -0.18874834, 0, 0.09205465, 0.30715942, 1.1405137, 3.1569395)
+
+[node name="LightProbe7" parent="Box_ObjectOnly2" unique_id=1525372376 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.041643772, 0, 0.08538616, 0, 0.095, 0, -0.08538616, 0, 0.041643772, -0.25873852, 1.1433425, 2.728139)
+
+[node name="SmallBlock" type="MeshInstance3D" parent="Box_ObjectOnly2" unique_id=1121413074]
+transform = Transform3D(0.22812472, 0.1022698, 4.4703548e-09, 0, -1.0927847e-08, 0.25, 0.1022698, -0.22812472, -9.971648e-09, 0.27290535, 1.1316025, 2.7874794)
+layers = 2
+mesh = SubResource("BoxMesh_7tflp")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly2/SmallBlock" unique_id=215292673 instance=ExtResource("10_tghkc")]
+
+[node name="TallBlock" type="MeshInstance3D" parent="Box_ObjectOnly2" unique_id=399732227]
+transform = Transform3D(0.21660446, -0.12482992, -1.4514261e-08, 0, -1.0927847e-08, 0.665, -0.12482992, -0.21660446, -2.5185097e-08, 0.007939339, 1.3419521, 3.1850462)
+layers = 2
+mesh = SubResource("BoxMesh_c7ykc")
+
+[node name="MaterialAdapter" parent="Box_ObjectOnly2/TallBlock" unique_id=1817730913 instance=ExtResource("10_tghkc")]
+
 [node name="Box_ObjectOnly_Moving" type="Node3D" parent="." unique_id=233172732]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.898851, 0, -4.047799)
 
@@ -1491,7 +1712,7 @@ script = ExtResource("7_7tflp")
 [node name="MaterialAdapter" parent="Box_ObjectOnly_Moving/Node3D/SmallBlock" unique_id=1004671342 instance=ExtResource("10_tghkc")]
 
 [node name="Horse" type="MeshInstance3D" parent="." unique_id=1790103201]
-transform = Transform3D(-1.9686875, 0, 3.0438287, 0, 3.625, 0, -3.0438287, 0, -1.9686875, -8.56569, 1.0937647, -3.327602)
+transform = Transform3D(-1.9686875, 0, 3.0438287, 0, 3.625, 0, -3.0438287, 0, -1.9686875, -6.697276, 1.0937647, -3.3275306)
 layers = 2
 mesh = SubResource("ArrayMesh_8v0ro")
 blend_shapes/hooves = 0.0
@@ -1500,7 +1721,6 @@ blend_shapes/hooves = 0.0
 
 [node name="Horse2" type="MeshInstance3D" parent="." unique_id=465657891]
 transform = Transform3D(2.7047114, 0, 2.413537, 0, 3.625, 0, -2.413537, 0, 2.7047114, -7.816932, 1.0937647, -3.327602)
-layers = 2
 mesh = SubResource("ArrayMesh_nb71s")
 blend_shapes/hooves = 0.0
 
@@ -1512,6 +1732,14 @@ gi_mode = 0
 mesh = SubResource("QuadMesh_e7bdr")
 
 [node name="MaterialAdapter" parent="Wall-RED" unique_id=393358447 instance=ExtResource("10_tghkc")]
+
+[node name="Ball" type="MeshInstance3D" parent="." unique_id=53393757]
+transform = Transform3D(-1.0011168e-08, 0.22902884, -0.38037062, -0.444, -1.9407857e-08, 0, -1.6626528e-08, 0.38037062, 0.22902884, -8.575523, 1.3635831, -3.3954916)
+layers = 2
+gi_mode = 0
+mesh = SubResource("SphereMesh_0213m")
+
+[node name="MaterialAdapter" parent="Ball" unique_id=1344265230 instance=ExtResource("10_tghkc")]
 
 [node name="Wall-BLUE" type="MeshInstance3D" parent="." unique_id=1576042662]
 transform = Transform3D(9.553427e-16, -2.1855694e-08, -1, -0.5, -2.1855694e-08, 0, -2.1855694e-08, 0.5, -4.371139e-08, -8.940697, 1.75, -3.4179916)
@@ -1548,11 +1776,21 @@ mesh = SubResource("QuadMesh_vx4c8")
 
 [node name="MaterialAdapter" parent="Wall-CYAN" unique_id=523160725 instance=ExtResource("10_tghkc")]
 
+[node name="Wall-CYAN2" type="MeshInstance3D" parent="." unique_id=2015742264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7449284, 1.5, -3.9248438)
+gi_mode = 0
+mesh = SubResource("QuadMesh_q2qp2")
+
+[node name="MaterialAdapter" parent="Wall-CYAN2" unique_id=1668249439 instance=ExtResource("10_tghkc")]
+
 [node name="LightProbe20" parent="." unique_id=373854985 instance=ExtResource("4_vgrjl")]
 transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -8.836363, 1.2475928, -3.3697636)
 
 [node name="LightProbe24" parent="." unique_id=824729702 instance=ExtResource("4_vgrjl")]
 transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -7.494243, 1.2475928, -3.3697636)
+
+[node name="LightProbe26" parent="." unique_id=1324888219 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -7.276388, 1.3545033, -3.3697636)
 
 [node name="LightProbe25" parent="." unique_id=880424782 instance=ExtResource("4_vgrjl")]
 transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -8.045356, 1.2475928, -3.6963835)
@@ -1564,4 +1802,16 @@ transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.0
 transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -8.625023, 1.7583706, -3.5656865)
 
 [node name="LightProbe23" parent="." unique_id=1839461553 instance=ExtResource("4_vgrjl")]
-transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -8.625023, 1.2569288, -3.5656865)
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -8.486536, 1.2569288, -3.5725539)
+
+[node name="LightProbe27" parent="." unique_id=2013947953 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -7.1527267, 1.2569288, -3.5725539)
+
+[node name="LightProbe28" parent="." unique_id=962306056 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -6.9748907, 1.2569288, -3.1068728)
+
+[node name="LightProbe29" parent="." unique_id=1061405644 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -6.3827686, 1.2569288, -3.5956311)
+
+[node name="LightProbe30" parent="." unique_id=834788245 instance=ExtResource("4_vgrjl")]
+transform = Transform3D(0.02630133, 0, 0.0539281, 0, 0.06, 0, -0.0539281, 0, 0.02630133, -6.459176, 1.7714037, -3.4880733)

@@ -12,3 +12,6 @@ sky_material = SubResource("PanoramaSkyMaterial_2kukh")
 background_mode = 2
 sky = SubResource("Sky_47tsv")
 sky_custom_fov = 90.0
+tonemap_mode = 1
+tonemap_exposure = 0.56
+tonemap_white = 2.28

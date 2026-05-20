@@ -61,6 +61,10 @@ func update_probes():
 			obj.mesh = set_per_vertex_harmonics(obj.global_transform, obj.mesh, mat)
 			obj.set_surface_override_material(0, mat)
 		
+		if(mat.get_shader_parameter("use_env")):
+			var cubemap := await prober.capture_env(obj.global_position, 0.1)
+			mat.set_shader_parameter("env_map", cubemap)
+		
 		mat.set_shader_parameter("use_sh", true)
 
 func update_object(obj):

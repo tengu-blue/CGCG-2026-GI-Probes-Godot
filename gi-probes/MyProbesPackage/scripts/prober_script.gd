@@ -17,6 +17,8 @@ func capture(capture_at : Vector3, min_dist : float ) -> Array[Vector3]:
 	var SH = spherical_harmonics(img) 
 	return SH
 
+func capture_env(capture_at : Vector3, min_dist : float) -> Cubemap:
+	return await capture_cubemap(capture_at, min_dist)
 
 func capture_cubemap(pos: Vector3, min_dist : float) -> Cubemap:
 	# global_transform.origin = pos

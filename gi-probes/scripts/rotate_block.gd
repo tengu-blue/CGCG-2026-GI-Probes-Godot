@@ -11,6 +11,10 @@ func _ready():
 	randomize()
 	_next_rotation()
 
+func _process(delta: float) -> void:
+	$SmallBlock.global_rotation = Vector3.ZERO
+	
+	
 
 func _next_rotation():
 	if tween:
