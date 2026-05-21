@@ -101,11 +101,11 @@ func set_per_vertex_harmonics(global_transform, mesh, mat):
 	arrays[Mesh.ARRAY_CUSTOM1] = new_custom1.to_byte_array().to_float32_array()
 	arrays[Mesh.ARRAY_CUSTOM2] = new_custom2.to_byte_array().to_float32_array()
 	arrays[Mesh.ARRAY_CUSTOM3] = new_custom3.to_byte_array().to_float32_array()	
-			
+
 	var format1 = 0
 	format1 = format1 | Mesh.ARRAY_CUSTOM_RGBA_FLOAT
 	format1 = format1 << Mesh.ARRAY_FORMAT_CUSTOM0_SHIFT
-	
+
 	var format2 = 0
 	format2 = format2 | Mesh.ARRAY_CUSTOM_RGBA_FLOAT
 	format2 = format2 << Mesh.ARRAY_FORMAT_CUSTOM1_SHIFT

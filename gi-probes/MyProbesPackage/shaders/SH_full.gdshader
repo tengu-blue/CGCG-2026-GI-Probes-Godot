@@ -98,6 +98,10 @@ vec3 fresnel_schlick(float cos_theta, vec3 F0) {
  	return F0 + (1.0 - F0) * pow(1.0 - cos_theta, 5.0);
 }
 
+vec3 FresnelSchlickRoughness(float cosTheta, vec3 F0, float roughness)
+{
+    return F0 + (max(vec3(1.0 - roughness), F0) - F0) * pow(clamp(1.0 - cosTheta, 0.0, 1.0), 5.0);
+} 
 
 // -------------------------------------------------------------------
 
@@ -131,38 +135,35 @@ void fragment() {
 	
 	 	vec3 irradiance = evaluate_sh(n);
 	#endif
-	   
+	
+	
+	vec3 N = normalize((INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);	
+	vec3 V = normalize((INV_VIEW_MATRIX * vec4(VIEW, 0.0)).xyz);
+	vec3 F0 = mix(vec3(0.4), albedo, metallic);
+	
+	vec3 F = FresnelSchlickRoughness(max(dot(N, V), 0.0), F0, roughness);
+	vec3 kS = F;
+	vec3 kD = 1.0 - kS;
+	kD *= 1.0 - metallic;
+	
  	if(use_sh) {
 		
 		vec3 indirect_diffuse = 
-			  irradiance
+			irradiance
 			* albedo
 			* (1.0 - metallic);
 		
 		// Hack that kinda looks best...
-		EMISSION = indirect_diffuse;
-		// ALBEDO *= irradiance;
+		EMISSION = kD * indirect_diffuse;
+		// ALBEDO = indirect_diffuse;
 	}
 	
 	if(use_sh && use_env) {
-		vec3 N = normalize((INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
-	 	vec3 V = normalize((INV_VIEW_MATRIX * vec4(VIEW, 0.0)).xyz);
-	 	
-		vec3 F0 = mix(vec3(0.4), albedo, metallic);
-		float dotNV = max(dot(N, V), 0.0);
- 	 	vec3 F = fresnel_schlick(dotNV, F0);
-		
-		vec3 R = reflect(V, N);
-		
-		vec3 env =
-		    textureLod(
-		        env_map,
-		        R,
-		        roughness * 5.0
-		    ).rgb;
+				
+		vec3 R = reflect(V, N);		
+		vec3 env = textureLod(env_map, R, roughness * 5.0).rgb;
 		
 		vec3 specularIBL = env * F;
-		
 		EMISSION += specularIBL;
 	}
 }
@@ -170,9 +171,7 @@ void fragment() {
 
 
 
-void light() {
-	vec2 uv = UV;
-	
+void light() {	
  	vec3 N = normalize((INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
  	vec3 V = normalize((INV_VIEW_MATRIX * vec4(VIEW, 0.0)).xyz);
  	vec3 L = normalize((INV_VIEW_MATRIX * vec4(LIGHT, 0.0)).xyz);
